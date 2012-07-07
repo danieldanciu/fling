@@ -1,1 +1,3 @@
-yoh
+Structure of the project:
+
+Two folders, 'mobile' and 'tv' each contain an Android project, one for mobile devices (tablet, phone) and one for Google TV.
