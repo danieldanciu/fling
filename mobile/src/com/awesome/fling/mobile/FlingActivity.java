@@ -21,8 +21,12 @@ import com.android.angle.AngleUI;
 import com.android.angle.AngleVector;
 import com.android.angle.FPSCounter;
 import com.awesome.fling.R;
+import com.awesome.fling.anymotecom.AnymoteComm;
+import com.awesome.fling.anymotecom.AnymoteCommImpl;
 
 public class FlingActivity extends AngleActivity {
+	private AnymoteComm anymoteComm;
+	private boolean anymoteCommReady;
 	
 	private MyDemo mDemo;
 	
@@ -121,6 +125,9 @@ public class FlingActivity extends AngleActivity {
 					
 				} else if (event.getAction() == MotionEvent.ACTION_UP){
 					mBall.mVelocity.set(new AngleVector(dx * 50, dy * 50));
+					if (anymoteCommReady) {
+						anymoteComm.sendString("ba");
+					}
 				}
 				return super.onTouchEvent(event);
 			}
@@ -148,6 +155,14 @@ public class FlingActivity extends AngleActivity {
 			FrameLayout mMainLayout=new FrameLayout(this);
 			mMainLayout.addView(mGLSurfaceView);
 			setContentView(mMainLayout);
+			anymoteComm =
+			        new AnymoteCommImpl(this,
+			        		new AnymoteComm.OnConnectedListener() {
+			          @Override
+			          public void onConnected() {
+			        	  anymoteCommReady = true;
+			          }
+			        });
 			
 			mDemo=new MyDemo(this);
 			setUI(mDemo);

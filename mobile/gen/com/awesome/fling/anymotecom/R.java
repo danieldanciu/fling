@@ -5,7 +5,7 @@
  * should not be modified by hand.
  */
 
-package com.awesome.fling;
+package com.awesome.fling.anymotecom;
 
 public final class R {
     public static final class attr {
