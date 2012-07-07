@@ -114,7 +114,8 @@ public class FlingActivity extends AngleActivity {
 			@Override
 			public boolean onTouchEvent(MotionEvent event)
 			{
-				if (event.getAction()==MotionEvent.ACTION_DOWN || event.getAction()==MotionEvent.ACTION_MOVE)
+				if (event.getAction() == MotionEvent.ACTION_DOWN ||
+					event.getAction() == MotionEvent.ACTION_MOVE)
 				{
 					mBall.mPosition.set(event.getX(), event.getY());
 					dx = event.getX() - x;
@@ -126,7 +127,7 @@ public class FlingActivity extends AngleActivity {
 				} else if (event.getAction() == MotionEvent.ACTION_UP){
 					mBall.mVelocity.set(new AngleVector(dx * 50, dy * 50));
 					if (anymoteCommReady) {
-						anymoteComm.sendString("ba");
+						//anymoteComm.sendString("ba");
 					}
 				}
 				return super.onTouchEvent(event);
@@ -147,7 +148,8 @@ public class FlingActivity extends AngleActivity {
 		public void onCreate(Bundle savedInstanceState)
 		{
 			super.onCreate(savedInstanceState);
-
+			anymoteCommReady = false;
+			
 			mSensorManager = (SensorManager)getSystemService(Context.SENSOR_SERVICE); 
 	      
 			//mGLSurfaceView.addObject(new FPSCounter());
@@ -160,6 +162,7 @@ public class FlingActivity extends AngleActivity {
 			        		new AnymoteComm.OnConnectedListener() {
 			          @Override
 			          public void onConnected() {
+			        	  anymoteComm.sendString("ba");
 			        	  anymoteCommReady = true;
 			          }
 			        });
