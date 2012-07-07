@@ -12,8 +12,9 @@ import android.view.WindowManager;
 public class VideoOverlay extends View
 {
 
-    private Paint paint;
     private Bitmap tomato;
+    private int tomatoWidth;
+    private int tomatoHeight;
 
     public VideoOverlay(Context context)
     {
@@ -35,17 +36,15 @@ public class VideoOverlay extends View
 
     private void init()
     {
-        paint = new Paint(Paint.ANTI_ALIAS_FLAG);
-        paint.setStyle(Paint.Style.STROKE);
-        paint.setColor(Color.RED);
-        paint.setStrokeWidth(3);
         tomato = BitmapFactory.decodeResource(getResources(), R.drawable.tomato);
+        tomatoWidth = tomato.getWidth();
+        tomatoHeight = tomato.getHeight();
     }
 
     @Override
     protected void onDraw(Canvas canvas)
     {
-        canvas.drawBitmap(tomato, getWidth() / 2, getHeight() / 2, paint);
+        canvas.drawBitmap(tomato, (getWidth() / 2) - tomatoWidth / 2, (getHeight() / 2) - tomatoHeight / 2, null);
     }
 
     public void onTomatoThrown()
