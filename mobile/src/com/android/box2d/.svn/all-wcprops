@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/89/trunk/src/com/android/box2d
+END
+Vec2.java
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/88/trunk/src/com/android/box2d/Vec2.java
+END
+BodyDef.java
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/88/trunk/src/com/android/box2d/BodyDef.java
+END
+Box2D.java
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/89/trunk/src/com/android/box2d/Box2D.java
+END

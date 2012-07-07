@@ -1,0 +1,173 @@
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/88/trunk/src/com/android/angle
+END
+AngleAudioObject.java
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/84/trunk/src/com/android/angle/AngleAudioObject.java
+END
+AngleSound.java
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/83/trunk/src/com/android/angle/AngleSound.java
+END
+AngleTileBank.java
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/74/trunk/src/com/android/angle/AngleTileBank.java
+END
+AngleAbstractSprite.java
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/75/trunk/src/com/android/angle/AngleAbstractSprite.java
+END
+AngleTileMap.java
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/74/trunk/src/com/android/angle/AngleTileMap.java
+END
+AngleActivity.java
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/83/trunk/src/com/android/angle/AngleActivity.java
+END
+EGLHelper.java
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/74/trunk/src/com/android/angle/EGLHelper.java
+END
+AngleTexture.java
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/43/trunk/src/com/android/angle/AngleTexture.java
+END
+RenderThread.java
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/86/trunk/src/com/android/angle/RenderThread.java
+END
+AngleVector.java
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/29/trunk/src/com/android/angle/AngleVector.java
+END
+AngleSpriteLayout.java
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/75/trunk/src/com/android/angle/AngleSpriteLayout.java
+END
+AngleString.java
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/83/trunk/src/com/android/angle/AngleString.java
+END
+AngleSprite.java
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/75/trunk/src/com/android/angle/AngleSprite.java
+END
+AngleObject.java
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/83/trunk/src/com/android/angle/AngleObject.java
+END
+AngleFont.java
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/74/trunk/src/com/android/angle/AngleFont.java
+END
+AnglePhysicsEngine.java
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/43/trunk/src/com/android/angle/AnglePhysicsEngine.java
+END
+AngleResourceTexture.java
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/74/trunk/src/com/android/angle/AngleResourceTexture.java
+END
+AngleUI.java
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/74/trunk/src/com/android/angle/AngleUI.java
+END
+AngleRotatingSprite.java
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/80/trunk/src/com/android/angle/AngleRotatingSprite.java
+END
+AngleCircleCollider.java
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/43/trunk/src/com/android/angle/AngleCircleCollider.java
+END
+XMLClass.java
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/79/trunk/src/com/android/angle/XMLClass.java
+END
+AngleMusic.java
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/83/trunk/src/com/android/angle/AngleMusic.java
+END
+AngleSegmentCollider.java
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/43/trunk/src/com/android/angle/AngleSegmentCollider.java
+END
+FPSCounter.java
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/85/trunk/src/com/android/angle/FPSCounter.java
+END
+AngleSurfaceView.java
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/83/trunk/src/com/android/angle/AngleSurfaceView.java
+END
+AnglePhysicObject.java
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/44/trunk/src/com/android/angle/AnglePhysicObject.java
+END
+AngleTextureEngine.java
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/51/trunk/src/com/android/angle/AngleTextureEngine.java
+END
+AngleFontTexture.java
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/82/trunk/src/com/android/angle/AngleFontTexture.java
+END
