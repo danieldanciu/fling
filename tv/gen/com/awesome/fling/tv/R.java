@@ -9,69 +9,77 @@ package com.awesome.fling.tv;
 
 public final class R {
     public static final class anim {
-        public static final int player_out=0x7f040000;
-        public static final int tv_key_action_begin=0x7f040001;
-        public static final int tv_key_action_end=0x7f040002;
+        public static final int old_tomato_splash=0x7f040000;
+        public static final int player_out=0x7f040001;
+        public static final int tv_key_action_begin=0x7f040002;
+        public static final int tv_key_action_end=0x7f040003;
+    }
+    public static final class animator {
+        public static final int tomato_splash=0x7f050000;
     }
     public static final class attr {
+        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int object_animator=0x7f010000;
     }
     public static final class color {
-        public static final int black=0x7f060001;
-        public static final int dark_grey=0x7f060004;
-        public static final int dark_red=0x7f06000b;
-        public static final int dark_transparent=0x7f060008;
-        public static final int darker_transparent=0x7f060009;
-        public static final int full_transparent=0x7f060005;
-        public static final int grey=0x7f060003;
-        public static final int light_grey=0x7f060002;
-        public static final int light_transparent=0x7f060007;
-        public static final int lighter_transparent=0x7f060006;
-        public static final int primary_font=0x7f06000e;
-        public static final int red=0x7f06000a;
-        public static final int text_tv_grey=0x7f060011;
-        public static final int text_tv_less_grey=0x7f060010;
+        public static final int black=0x7f070001;
+        public static final int dark_grey=0x7f070004;
+        public static final int dark_red=0x7f07000b;
+        public static final int dark_transparent=0x7f070008;
+        public static final int darker_transparent=0x7f070009;
+        public static final int full_transparent=0x7f070005;
+        public static final int grey=0x7f070003;
+        public static final int light_grey=0x7f070002;
+        public static final int light_transparent=0x7f070007;
+        public static final int lighter_transparent=0x7f070006;
+        public static final int primary_font=0x7f07000e;
+        public static final int red=0x7f07000a;
+        public static final int text_tv_grey=0x7f070011;
+        public static final int text_tv_less_grey=0x7f070010;
         /**  text colors for TV controller 
          */
-        public static final int text_tv_regular=0x7f06000f;
-        public static final int tv_ad_background=0x7f06000d;
-        public static final int tv_ad_remaining=0x7f06000c;
+        public static final int text_tv_regular=0x7f07000f;
+        public static final int tv_ad_background=0x7f07000d;
+        public static final int tv_ad_remaining=0x7f07000c;
         /**  Color palette 
          */
-        public static final int white=0x7f060000;
+        public static final int white=0x7f070000;
     }
     public static final class dimen {
-        public static final int large_font_size=0x7f050002;
-        public static final int medium_font_size=0x7f050001;
-        public static final int player_next_bg_left=0x7f050008;
-        public static final int player_next_btn_height=0x7f050014;
-        public static final int player_next_btn_left=0x7f050011;
-        public static final int player_next_btn_top=0x7f050012;
-        public static final int player_next_btn_width=0x7f050013;
-        public static final int player_next_prev_bg_top=0x7f050007;
+        public static final int large_font_size=0x7f060002;
+        public static final int medium_font_size=0x7f060001;
+        public static final int player_next_bg_left=0x7f060008;
+        public static final int player_next_btn_height=0x7f060014;
+        public static final int player_next_btn_left=0x7f060011;
+        public static final int player_next_btn_top=0x7f060012;
+        public static final int player_next_btn_width=0x7f060013;
+        public static final int player_next_prev_bg_top=0x7f060007;
         /**  Player 
          */
-        public static final int player_play_bg_left=0x7f050005;
-        public static final int player_play_bg_right=0x7f050006;
-        public static final int player_play_btn_height=0x7f05000c;
-        public static final int player_play_btn_left=0x7f05000a;
-        public static final int player_play_btn_top=0x7f050009;
-        public static final int player_play_btn_width=0x7f05000b;
-        public static final int player_prev_btn_height=0x7f050010;
-        public static final int player_prev_btn_left=0x7f05000d;
-        public static final int player_prev_btn_top=0x7f05000e;
-        public static final int player_prev_btn_width=0x7f05000f;
+        public static final int player_play_bg_left=0x7f060005;
+        public static final int player_play_bg_right=0x7f060006;
+        public static final int player_play_btn_height=0x7f06000c;
+        public static final int player_play_btn_left=0x7f06000a;
+        public static final int player_play_btn_top=0x7f060009;
+        public static final int player_play_btn_width=0x7f06000b;
+        public static final int player_prev_btn_height=0x7f060010;
+        public static final int player_prev_btn_left=0x7f06000d;
+        public static final int player_prev_btn_top=0x7f06000e;
+        public static final int player_prev_btn_width=0x7f06000f;
         /**  Font sizes 
          */
-        public static final int small_font_size=0x7f050000;
-        public static final int status_spinner_height=0x7f050004;
+        public static final int small_font_size=0x7f060000;
+        public static final int status_spinner_height=0x7f060004;
         /**  Status defaults 
          */
-        public static final int status_spinner_width=0x7f050003;
+        public static final int status_spinner_width=0x7f060003;
         /**  Bottom margin for the SubtitleOverlay. 
          */
-        public static final int subtitle_margin=0x7f050017;
-        public static final int video_grid_horizontal_spacing=0x7f050016;
-        public static final int video_grid_vertical_spacing=0x7f050015;
+        public static final int subtitle_margin=0x7f060017;
+        public static final int video_grid_horizontal_spacing=0x7f060016;
+        public static final int video_grid_vertical_spacing=0x7f060015;
     }
     public static final class drawable {
         public static final int alert_error=0x7f020000;
@@ -191,51 +199,52 @@ public final class R {
         public static final int tv_scrubber_progress=0x7f020072;
     }
     public static final class id {
-        public static final int back=0x7f0c000f;
-        public static final int cc=0x7f0c0016;
-        public static final int controls=0x7f0c0006;
-        public static final int current_time=0x7f0c0019;
-        public static final int divider=0x7f0c0014;
-        public static final int error_view=0x7f0c000a;
-        public static final int error_view_button=0x7f0c000c;
-        public static final int error_view_text=0x7f0c000b;
-        public static final int extra_buttons_frame=0x7f0c0015;
-        public static final int fastforward=0x7f0c0012;
-        public static final int forward=0x7f0c0013;
-        public static final int fullscreen=0x7f0c0007;
-        public static final int home=0x7f0c0017;
-        public static final int keyAction=0x7f0c0009;
-        public static final int loading_view=0x7f0c0008;
-        public static final int overlay=0x7f0c0001;
-        public static final int play=0x7f0c0011;
-        public static final int progressbar=0x7f0c000e;
-        public static final int remaining=0x7f0c0002;
-        public static final int rewind=0x7f0c0010;
-        public static final int throw_tomato=0x7f0c001b;
-        public static final int thumbnail=0x7f0c0004;
-        public static final int timebar=0x7f0c0018;
-        public static final int title=0x7f0c0003;
-        public static final int total_time=0x7f0c001a;
-        public static final int tv_controls_frame=0x7f0c000d;
-        public static final int upcoming_title=0x7f0c0005;
-        public static final int youtube_player_view=0x7f0c0000;
+        public static final int back=0x7f0d000f;
+        public static final int cc=0x7f0d0016;
+        public static final int controls=0x7f0d0006;
+        public static final int current_time=0x7f0d0019;
+        public static final int divider=0x7f0d0014;
+        public static final int error_view=0x7f0d000a;
+        public static final int error_view_button=0x7f0d000c;
+        public static final int error_view_text=0x7f0d000b;
+        public static final int extra_buttons_frame=0x7f0d0015;
+        public static final int fastforward=0x7f0d0012;
+        public static final int forward=0x7f0d0013;
+        public static final int fullscreen=0x7f0d0007;
+        public static final int home=0x7f0d0017;
+        public static final int keyAction=0x7f0d0009;
+        public static final int loading_view=0x7f0d0008;
+        public static final int overlay=0x7f0d0001;
+        public static final int play=0x7f0d0011;
+        public static final int progressbar=0x7f0d000e;
+        public static final int remaining=0x7f0d0002;
+        public static final int rewind=0x7f0d0010;
+        public static final int throw_tomato=0x7f0d001b;
+        public static final int thumbnail=0x7f0d0004;
+        public static final int timebar=0x7f0d0018;
+        public static final int title=0x7f0d0003;
+        public static final int total_time=0x7f0d001a;
+        public static final int tv_controls_frame=0x7f0d000d;
+        public static final int upcoming_title=0x7f0d0005;
+        public static final int youtube_player_view=0x7f0d0000;
     }
     public static final class integer {
-        public static final int fade_duration_fast=0x7f070005;
+        public static final int fade_duration_fast=0x7f080005;
         /**  Fade durations for the DefaultControllerOverlay, in milliseconds. 
          */
-        public static final int fade_duration_slow=0x7f070004;
-        public static final int paged_views_items_per_page=0x7f070001;
+        public static final int fade_duration_slow=0x7f080004;
+        public static final int paged_views_items_per_page=0x7f080001;
         /**  Paged Views 
          */
-        public static final int paged_views_max_items=0x7f070000;
-        public static final int tv_controller_repeated_action_delay=0x7f070003;
+        public static final int paged_views_max_items=0x7f080000;
+        public static final int tomato_splash_animation_duration=0x7f080007;
+        public static final int tv_controller_repeated_action_delay=0x7f080003;
         /**  TV Controller overlay 
          */
-        public static final int tv_controller_timeout_idle=0x7f070002;
+        public static final int tv_controller_timeout_idle=0x7f080002;
         /**  Version details 
          */
-        public static final int youtube_api_version_code=0x7f070006;
+        public static final int youtube_api_version_code=0x7f080006;
     }
     public static final class layout {
         public static final int main=0x7f030000;
@@ -245,517 +254,542 @@ public final class R {
         public static final int tv_controls=0x7f030004;
     }
     public static final class menu {
-        public static final int main_menu=0x7f0b0000;
+        public static final int main_menu=0x7f0c0000;
     }
     public static final class plurals {
-        public static final int days_ago=0x7f090003;
-        public static final int days_remaining=0x7f090007;
-        public static final int hours_ago=0x7f090004;
-        public static final int hours_remaining=0x7f090008;
-        public static final int minutes_ago=0x7f090005;
-        public static final int months_ago=0x7f090001;
-        public static final int seconds_ago=0x7f090006;
-        public static final int weeks_ago=0x7f090002;
+        public static final int days_ago=0x7f0a0003;
+        public static final int days_remaining=0x7f0a0007;
+        public static final int hours_ago=0x7f0a0004;
+        public static final int hours_remaining=0x7f0a0008;
+        public static final int minutes_ago=0x7f0a0005;
+        public static final int months_ago=0x7f0a0001;
+        public static final int seconds_ago=0x7f0a0006;
+        public static final int weeks_ago=0x7f0a0002;
         /**  Time spans 
          */
-        public static final int years_ago=0x7f090000;
+        public static final int years_ago=0x7f0a0000;
     }
     public static final class string {
         /**  Label used to indicate that a rental is about to expire (a few minutes left) 
          */
-        public static final int about_to_expire=0x7f080069;
+        public static final int about_to_expire=0x7f090069;
         /**  Talk-back message for the action of showing the menu containing the closed captions options [CHAR LIMIT=40] 
          */
-        public static final int accessibility_closed_captions=0x7f080075;
+        public static final int accessibility_closed_captions=0x7f090075;
         /**  Accessibility 
  Talk-back message for entering fullscreen playback [CHAR LIMIT=40]
          */
-        public static final int accessibility_enter_fullscreen=0x7f080073;
+        public static final int accessibility_enter_fullscreen=0x7f090073;
         /**  Talk-back message for exiting fullscreen playback [CHAR LIMIT=40]
          */
-        public static final int accessibility_exit_fullscreen=0x7f080074;
+        public static final int accessibility_exit_fullscreen=0x7f090074;
         /**  Talk-back message for switching to high quality [CHAR LIMIT=40] 
          */
-        public static final int accessibility_hq=0x7f080079;
+        public static final int accessibility_hq=0x7f090079;
         /**  Talk-back message for switching to low quality [CHAR LIMIT=40] 
          */
-        public static final int accessibility_lq=0x7f08007a;
+        public static final int accessibility_lq=0x7f09007a;
         /**  Talk-back message for advancing to the next video in the playlist [CHAR LIMIT=40] 
          */
-        public static final int accessibility_next=0x7f08007b;
+        public static final int accessibility_next=0x7f09007b;
         /**  Talk-back message for pausing playback [CHAR LIMIT=40] 
          */
-        public static final int accessibility_pause=0x7f080077;
+        public static final int accessibility_pause=0x7f090077;
         /**  Talk-back message for starting playback [CHAR LIMIT=40] 
          */
-        public static final int accessibility_play=0x7f080076;
+        public static final int accessibility_play=0x7f090076;
         /**  Talk-back message playing video in the main YouTube app [CHAR LIMIT=40] 
          */
-        public static final int accessibility_play_in_youtube=0x7f08007e;
+        public static final int accessibility_play_in_youtube=0x7f09007e;
         /**  Talk-back message for going back to the previous video in the playlist [CHAR LIMIT=40] 
          */
-        public static final int accessibility_previous=0x7f08007c;
+        public static final int accessibility_previous=0x7f09007c;
         /**  Talk-back message for replaying the video form the beginning [CHAR LIMIT=40] 
          */
-        public static final int accessibility_replay=0x7f080078;
+        public static final int accessibility_replay=0x7f090078;
         /**  Talk-back message for showing the options menu [CHAR LIMIT=40] 
          */
-        public static final int accessibility_show_options_menu=0x7f08007d;
+        public static final int accessibility_show_options_menu=0x7f09007d;
         /**  Login 
  Title of the menu where the user chooses to which account she wants to log in [CHAR LIMIT=20] 
          */
-        public static final int accounts_title=0x7f080038;
+        public static final int accounts_title=0x7f090038;
         /**  Text displayed inside the player when an ad is playing in landscape mode and has no video title [CHAR LIMIT=30] 
          */
-        public static final int ad_landscape_no_title=0x7f080062;
+        public static final int ad_landscape_no_title=0x7f090062;
         /**  Text displayed inside the player when an ad is playing in landscape mode and has a video title [CHAR LIMIT=12] 
          */
-        public static final int ad_landscape_title=0x7f080061;
+        public static final int ad_landscape_title=0x7f090061;
         /**  Text displayed for an ad's click-through URL [CHAR LIMIT=30] 
          */
-        public static final int ad_learn_more=0x7f080063;
+        public static final int ad_learn_more=0x7f090063;
         /**  Indicates video to be played after the advertisement [CHAR LIMIT=30] 
          */
-        public static final int ad_next_up=0x7f080066;
+        public static final int ad_next_up=0x7f090066;
         /**  Adverts 
  Text displayed inside the player when an ad is playing in portrait mode [CHAR LIMIT=12] 
          */
-        public static final int ad_portrait=0x7f080060;
+        public static final int ad_portrait=0x7f090060;
         /**  Indicates advertisement and time remaining in format (0:14). [CHAR LIMIT=50] 
          */
-        public static final int ad_remaining_time=0x7f080067;
+        public static final int ad_remaining_time=0x7f090067;
         /**  Text shown in the dialog that lets the user confirm that they agree to play a single flagged video [CHAR LIMIT=150] 
          */
-        public static final int adult_content_confirm_single_video=0x7f080054;
+        public static final int adult_content_confirm_single_video=0x7f090054;
         /**  Adult content dialogs 
  Used in the dialog that warns the user that the video she is about to play may contain inappropriate content [CHAR LIMIT=150] 
          */
-        public static final int adult_content_intro=0x7f080053;
+        public static final int adult_content_intro=0x7f090053;
         /**  Text shown in the dialog that prevents a user who hasn't verified to be 18 or older from playing a video [CHAR LIMIT=150] 
          */
-        public static final int adult_content_underage=0x7f080055;
+        public static final int adult_content_underage=0x7f090055;
         /**   Browse 
  Title for the 'all categories' item in the categories list [CHAR LIMIT=20] 
          */
-        public static final int all_categories=0x7f080013;
+        public static final int all_categories=0x7f090013;
         /**  Toast displayed when the autoplay of a playlist is stopped because of a restriction [CHAR LIMIT=50] 
          */
-        public static final int autoplay_restriction=0x7f08005f;
+        public static final int autoplay_restriction=0x7f09005f;
         /**  Text displayed when the video can't be played because it was blocked by the content owner [CHAR LIMIT=40] 
          */
-        public static final int blocked_by_content_owner=0x7f08004a;
+        public static final int blocked_by_content_owner=0x7f09004a;
         /**  Used for Cancel buttons in dialogs [CHAR LIMIT=12] 
          */
-        public static final int cancel=0x7f080016;
+        public static final int cancel=0x7f090016;
         /**  Used for Confirm buttons in dialogs [CHAR LIMIT=12] 
          */
-        public static final int confirm=0x7f080017;
+        public static final int confirm=0x7f090017;
         /**  Text displayed when the video can't be played because the server connection is lost [CHAR LIMIT=40] 
          */
-        public static final int connection_to_server_lost=0x7f080041;
+        public static final int connection_to_server_lost=0x7f090041;
         /**  Used in dialogs to record a setting to avoid showing it in the future. [CHAR LIMIT=50] 
          */
-        public static final int dont_show_again=0x7f08001a;
+        public static final int dont_show_again=0x7f09001a;
         /**  Text displayed when the video can't be played because it was rejected, it's a duplicate of another video [CHAR LIMIT=40] 
          */
-        public static final int duplicate_upload=0x7f080046;
+        public static final int duplicate_upload=0x7f090046;
         /**  Text displayed when the video can't be played because embedding has been disabled by the content owner. Embedding means showing the video in other places than official YouTube website/apps  [CHAR LIMIT=100] 
          */
-        public static final int embedding_not_allowed=0x7f080043;
+        public static final int embedding_not_allowed=0x7f090043;
         /**  Message shown to the user when there's a problem signing into their account. [CHAR LIMIT= 100] 
          */
-        public static final int error_authenticating=0x7f08000e;
+        public static final int error_authenticating=0x7f09000e;
         /**  Message shown to the user when there's a problem connecting to the network. [CHAR LIMIT= 100] 
          */
-        public static final int error_connection=0x7f080008;
+        public static final int error_connection=0x7f090008;
         /**  Message shown to the user when the very first request fails. [CHAR LIMIT= 100] 
          */
-        public static final int error_dev_reg=0x7f08000d;
+        public static final int error_dev_reg=0x7f09000d;
         /**  Message shown to the user when an he/she attempts a forbidden action [CHAR_LIMIT= 50] 
          */
-        public static final int error_forbidden_action=0x7f080010;
+        public static final int error_forbidden_action=0x7f090010;
         /**  Message shown to the user when an he/she attempts to access a forbidden list (of videos, events, etc.) [CHAR_LIMIT= 100] 
          */
-        public static final int error_forbidden_list_access=0x7f080011;
+        public static final int error_forbidden_list_access=0x7f090011;
         /**  Message shown to the user if there's a generic error for which we have no specific information. [CHAR LIMIT= 100] 
          */
-        public static final int error_generic=0x7f080012;
+        public static final int error_generic=0x7f090012;
         /**  Message shown to the user when there's a network problem for which we have an HTTP error number. [CHAR LIMIT= 100] 
          */
-        public static final int error_http=0x7f080009;
+        public static final int error_http=0x7f090009;
         /**   Errors 
  Message shown to the user when there's a generic network problem. [CHAR LIMIT= 100] 
          */
-        public static final int error_network=0x7f080007;
+        public static final int error_network=0x7f090007;
         /**  Message shown to the user when he/she attempted to login with a google account that is not linked to a youtube account. [CHAR LIMIT= 150] 
          */
-        public static final int error_no_linked_youtube_account=0x7f08000f;
+        public static final int error_no_linked_youtube_account=0x7f09000f;
         /**  Message shown to the user when there's a XML parsing problem. [CHAR LIMIT= 100] 
          */
-        public static final int error_response=0x7f08000b;
+        public static final int error_response=0x7f09000b;
         /**  Message shown to the user when XML parsing encountered an unexpected format. [CHAR LIMIT= 100] 
          */
-        public static final int error_response_invalid=0x7f08000c;
+        public static final int error_response_invalid=0x7f09000c;
         /**  Message shown to the user when the YouTube server is in maintenance mode. [CHAR LIMIT= 100] 
          */
-        public static final int error_youtube_server_down=0x7f08000a;
-        public static final int event_friend_added=0x7f08005c;
-        public static final int event_user_subscription_added=0x7f08005d;
-        public static final int event_video_added_to_playlist=0x7f08005b;
-        public static final int event_video_commented=0x7f080059;
-        public static final int event_video_favorited=0x7f080058;
+        public static final int error_youtube_server_down=0x7f09000a;
+        public static final int event_friend_added=0x7f09005c;
+        public static final int event_user_subscription_added=0x7f09005d;
+        public static final int event_video_added_to_playlist=0x7f09005b;
+        public static final int event_video_commented=0x7f090059;
+        public static final int event_video_favorited=0x7f090058;
         /**  User activity. 
  Texts shown in a user's activity feed [CHAR LIMIT=30] 
          */
-        public static final int event_video_rated=0x7f080056;
-        public static final int event_video_shared=0x7f080057;
-        public static final int event_video_uploaded=0x7f08005a;
+        public static final int event_video_rated=0x7f090056;
+        public static final int event_video_shared=0x7f090057;
+        public static final int event_video_uploaded=0x7f09005a;
         /**  Label used to indicate a rented videos has expired 
          */
-        public static final int expired=0x7f08006a;
+        public static final int expired=0x7f09006a;
         /**  This is an item shown in a list of possible reasons for flagging a video. This particular one is DANGEROUS. [CHAR LIMIT=50] 
          */
-        public static final int flag_reason_dangerous=0x7f08002a;
+        public static final int flag_reason_dangerous=0x7f09002a;
         /**  This is an item shown in a list of possible reasons for flagging a video. This particular one is HATE. [CHAR LIMIT=50] 
          */
-        public static final int flag_reason_hate=0x7f080029;
+        public static final int flag_reason_hate=0x7f090029;
         /**  Flagging - description of possible complaint reasons 
  This is an item shown in a list of possible reasons for flagging a video. This particular one is PORN. [CHAR LIMIT=50] 
          */
-        public static final int flag_reason_porn=0x7f080027;
+        public static final int flag_reason_porn=0x7f090027;
         /**  This is an item shown in a list of possible reasons for flagging a video. This particular one is about rights infringement. [CHAR LIMIT=50] 
          */
-        public static final int flag_reason_rights=0x7f08002c;
+        public static final int flag_reason_rights=0x7f09002c;
         /**  This is an item shown in a list of possible reasons for flagging a video. This particular one is SPAM. [CHAR LIMIT=50] 
          */
-        public static final int flag_reason_spam=0x7f08002b;
+        public static final int flag_reason_spam=0x7f09002b;
         /**  This is an item shown in a list of possible reasons for flagging a video. This particular one is VIOLENCE. [CHAR LIMIT=50] 
          */
-        public static final int flag_reason_violence=0x7f080028;
+        public static final int flag_reason_violence=0x7f090028;
         /**  Genres that apply to both movies and shows 
  The action & adventure genre for a movie or show. [CHAR LIMIT=30] 
          */
-        public static final int genre_action_and_adventure=0x7f08007f;
+        public static final int genre_action_and_adventure=0x7f09007f;
         /**  The animation & cartoons genre for a movie or show. [CHAR LIMIT=30] 
          */
-        public static final int genre_animation_and_cartoons=0x7f080080;
+        public static final int genre_animation_and_cartoons=0x7f090080;
         /**  The beauty & fashion genre for a show. [CHAR LIMIT=30] 
          */
-        public static final int genre_beauty_and_fashion=0x7f080097;
+        public static final int genre_beauty_and_fashion=0x7f090097;
         /**  The celebrity & entertainment genre for a show. [CHAR LIMIT=30] 
          */
-        public static final int genre_celebrity_and_entertainment=0x7f080095;
+        public static final int genre_celebrity_and_entertainment=0x7f090095;
         /**  Genres that apply only to shows 
  The classic TV genre for a show. [CHAR LIMIT=30] 
          */
-        public static final int genre_classic_tv=0x7f08008d;
+        public static final int genre_classic_tv=0x7f09008d;
         /**  The classics genre for a movie. [CHAR LIMIT=30] 
          */
-        public static final int genre_classics=0x7f080086;
+        public static final int genre_classics=0x7f090086;
         /**  The comedy genre for a movie or show. [CHAR LIMIT=30] 
          */
-        public static final int genre_comedy=0x7f080081;
+        public static final int genre_comedy=0x7f090081;
         /**  The crime genre for a movie. [CHAR LIMIT=30] 
          */
-        public static final int genre_crime=0x7f080087;
+        public static final int genre_crime=0x7f090087;
         /**  The documentary & biography genre for a movie or show. [CHAR LIMIT=30] 
          */
-        public static final int genre_documentary_and_biography=0x7f080084;
+        public static final int genre_documentary_and_biography=0x7f090084;
         /**  The drama genre for a movie or show. [CHAR LIMIT=30] 
          */
-        public static final int genre_drama=0x7f080082;
+        public static final int genre_drama=0x7f090082;
         /**  The family genre for a movie. [CHAR LIMIT=30] 
          */
-        public static final int genre_family=0x7f080088;
+        public static final int genre_family=0x7f090088;
         /**  The food genre for a show. [CHAR LIMIT=30] 
          */
-        public static final int genre_food=0x7f080098;
+        public static final int genre_food=0x7f090098;
         /**  The foreign genre for a movie. [CHAR LIMIT=30] 
          */
-        public static final int genre_foreign=0x7f080089;
+        public static final int genre_foreign=0x7f090089;
         /**  The gaming genre for a show. [CHAR LIMIT=30] 
          */
-        public static final int genre_gaming=0x7f080099;
+        public static final int genre_gaming=0x7f090099;
         /**  The health and fitness genre for a show. [CHAR LIMIT=30] 
          */
-        public static final int genre_health_and_fitness=0x7f08009a;
+        public static final int genre_health_and_fitness=0x7f09009a;
         /**  The home & garden TV genre for a show. [CHAR LIMIT=30] 
          */
-        public static final int genre_home_and_garden=0x7f08008e;
+        public static final int genre_home_and_garden=0x7f09008e;
         /**  The horror genre for a movie. [CHAR LIMIT=30] 
          */
-        public static final int genre_horror=0x7f08008a;
+        public static final int genre_horror=0x7f09008a;
         /**  The learning & education genre for a show. [CHAR LIMIT=30] 
          */
-        public static final int genre_learning_and_education=0x7f08009b;
+        public static final int genre_learning_and_education=0x7f09009b;
         /**  The mystery & suspense genre for a movie. [CHAR LIMIT=30] 
          */
-        public static final int genre_mystery_and_suspense=0x7f08008b;
+        public static final int genre_mystery_and_suspense=0x7f09008b;
         /**  The nature genre for a show. [CHAR LIMIT=30] 
          */
-        public static final int genre_nature=0x7f080096;
+        public static final int genre_nature=0x7f090096;
         /**  The news genre for a show. [CHAR LIMIT=30] 
          */
-        public static final int genre_news=0x7f08008f;
+        public static final int genre_news=0x7f09008f;
         /**  The reality & games genre for a show. [CHAR LIMIT=30] 
          */
-        public static final int genre_reality_and_games=0x7f080090;
+        public static final int genre_reality_and_games=0x7f090090;
         /**  The romance genre for a movie. [CHAR LIMIT=30] 
          */
-        public static final int genre_romance=0x7f08008c;
+        public static final int genre_romance=0x7f09008c;
         /**  The science and technology genre for a show. [CHAR LIMIT=30] 
          */
-        public static final int genre_science_and_technology=0x7f080091;
+        public static final int genre_science_and_technology=0x7f090091;
         /**  Genres that apply only to movies 
  The science fiction genre for a movie. [CHAR LIMIT=30] 
          */
-        public static final int genre_science_fiction=0x7f080085;
+        public static final int genre_science_fiction=0x7f090085;
         /**  The soap genre for a show. [CHAR LIMIT=30] 
          */
-        public static final int genre_soaps=0x7f080092;
+        public static final int genre_soaps=0x7f090092;
         /**  The sports genre for a movie or show. [CHAR LIMIT=30] 
          */
-        public static final int genre_sports=0x7f080083;
+        public static final int genre_sports=0x7f090083;
         /**  The travel genre for a show. [CHAR LIMIT=30] 
          */
-        public static final int genre_travel=0x7f080093;
+        public static final int genre_travel=0x7f090093;
         /**  The web originals genre for a show. [CHAR LIMIT=30] 
          */
-        public static final int genre_web_originals=0x7f080094;
+        public static final int genre_web_originals=0x7f090094;
         /**  Label used to indicate that a rental has less then one hour before it expires  
          */
-        public static final int less_then_one_hour_remaining=0x7f080068;
+        public static final int less_then_one_hour_remaining=0x7f090068;
         /**  Title for the 'live' item in the categories list and the Live screen header bar [CHAR LIMIT=20] 
          */
-        public static final int live_category=0x7f080014;
+        public static final int live_category=0x7f090014;
         /**  The text indicating a live event is completed and can't be replayed [CHAR LIMIT=30] 
          */
-        public static final int live_event_cant_replay=0x7f08006c;
+        public static final int live_event_cant_replay=0x7f09006c;
         /**  Message showed on top of the player when opening a video which is a live video that has not started it.
        It informs the user when the event will start [CHAR LIMIT=50] 
          */
-        public static final int live_event_starts_at=0x7f08006d;
+        public static final int live_event_starts_at=0x7f09006d;
         /**  Live 
  The text indicating a live event is unavailable because it's cancelled or rejected [CHAR LIMIT=30] 
          */
-        public static final int live_event_unavailable=0x7f08006b;
+        public static final int live_event_unavailable=0x7f09006b;
         /**  The format string to tell the start time of a live event which lies in the past. E.g.
        "Started 20 minutes ago". The substring "20 minutes ago" will be constructed separately. [CHAR LIMIT=15] 
          */
-        public static final int live_started_when=0x7f08006e;
+        public static final int live_started_when=0x7f09006e;
         /**  The format string to tell the start time of a live event which is later today. E.g.
        "Today at 13:45". The substring "13:45" will be constructed separately. [CHAR LIMIT=15] 
          */
-        public static final int live_starting_today_when=0x7f08006f;
+        public static final int live_starting_today_when=0x7f09006f;
         /**  The format string to tell the start time of a live event coming up within 7 days from now.
        %1 is the weekday text, e.g. "Wednesday", and %2 is the time text, e.g. "13:45". [CHAR LIMIT=15]
          */
-        public static final int live_starting_when=0x7f080070;
+        public static final int live_starting_when=0x7f090070;
         /**  This is the alert text displayed by the player when there is no network connection. [CHAR LIMIT=100] 
          */
-        public static final int no_network=0x7f080003;
+        public static final int no_network=0x7f090003;
         /**  Toast displayed when there are no available subtitles for a video [CHAR LIMIT=50] 
          */
-        public static final int no_subtitles=0x7f08002f;
+        public static final int no_subtitles=0x7f09002f;
         /**  General purpose 
  Used for OK buttons in dialogs [CHAR LIMIT=12] 
          */
-        public static final int ok=0x7f080015;
+        public static final int ok=0x7f090015;
         /**  Description of the Open Source Licenses preference menu item [CHAR LIMIT=100] 
          */
-        public static final int open_source_licenses_description=0x7f080072;
+        public static final int open_source_licenses_description=0x7f090072;
         /**  Licenses 
  Title of the Open source licenses preference menu item and dialog box [CHAR LIMIT=50] 
          */
-        public static final int open_source_licenses_title=0x7f080071;
+        public static final int open_source_licenses_title=0x7f090071;
         /**  Menu item that allows the user to specify a new account to log in [CHAR LIMIT=20] 
          */
-        public static final int other_account=0x7f080039;
+        public static final int other_account=0x7f090039;
         /**  Displayed in the title of the chooser for picking a video to upload. [CHAR LIMIT= 30] 
          */
-        public static final int pick_video_to_upload=0x7f080005;
+        public static final int pick_video_to_upload=0x7f090005;
         /**  Playlists 
  This is a toast message displayed when auto-playing a playlist and one or more videos were skipped because they were not available 
          */
-        public static final int playlist_skipped_unavailable_videos=0x7f08005e;
+        public static final int playlist_skipped_unavailable_videos=0x7f09005e;
         /**  Text displayed when the video can't be played because there was a problem while playing it [CHAR LIMIT=40] 
          */
-        public static final int problem_while_playing=0x7f08003e;
+        public static final int problem_while_playing=0x7f09003e;
         /**  Text displayed when the video can't be played because there was a problem while playing it, and we have an error code [CHAR LIMIT=40] 
          */
-        public static final int problem_while_playing_with_code=0x7f08003f;
+        public static final int problem_while_playing_with_code=0x7f09003f;
         /**   Reasons why videos are not playable 
   These reasons are shown in the video snippet and also in a dialog if played 
  Text displayed when the video can't be played because it is being processed by YouTube [CHAR LIMIT=40] 
          */
-        public static final int processing_video=0x7f08003a;
+        public static final int processing_video=0x7f09003a;
         /**  Messages 
  Title displayed when searching for user entered search string. [CHAR LIMIT=20] 
          */
-        public static final int results=0x7f080001;
+        public static final int results=0x7f090001;
         /**  Used for Retry buttons in dialogs and lists [CHAR LIMIT=12] 
          */
-        public static final int retry=0x7f080018;
+        public static final int retry=0x7f090018;
         /**  Dialogs 
  Displayed in the title of the chooser for things to do with a video
        link that is to be sent to another application. This is the complete
        title. A list of apps is displayed in the dialog that the user can
        choose to handle the operation. [CHAR LIMIT= 30]
          */
-        public static final int send_video=0x7f080004;
+        public static final int send_video=0x7f090004;
         /**  When sharing video link, this is the default subject of the message. [CHAR LIMIT=50] 
          */
-        public static final int share_subject=0x7f080002;
+        public static final int share_subject=0x7f090002;
         /**  Content of notification message indicating that a post to some social networks has failed. It contains the name of one of the social networks.[CHAR LIMIT=100] 
          */
-        public static final int sharing_post_failed_multiple=0x7f080035;
+        public static final int sharing_post_failed_multiple=0x7f090035;
         /**  Content of notification message indicating that a post to a social network has failed. It contains the name of the social network.[CHAR LIMIT=100] 
          */
-        public static final int sharing_post_failed_single=0x7f080034;
+        public static final int sharing_post_failed_single=0x7f090034;
         /**  Content of notification message indicating that a post to some social networks has succeeded. It contains the name of one of the social networks.[CHAR LIMIT=100] 
          */
-        public static final int sharing_post_success_multiple=0x7f080037;
+        public static final int sharing_post_success_multiple=0x7f090037;
         /**  Content of notification message indicating that a post to a social network has succeeded. It contains the name of the social network.[CHAR LIMIT=100] 
          */
-        public static final int sharing_post_success_single=0x7f080036;
+        public static final int sharing_post_success_single=0x7f090036;
         /**  Text displayed to inform user that they can skip an ad [CHAR LIMIT=21]
          */
-        public static final int skip_ad=0x7f080065;
+        public static final int skip_ad=0x7f090065;
         /**  Text displayed to inform user of the amount time, in seconds, they must wait before they can skip an ad [CHAR LIMIT=44]
          */
-        public static final int skip_ad_in=0x7f080064;
-        public static final int space_separator=0x7f08001b;
+        public static final int skip_ad_in=0x7f090064;
+        public static final int space_separator=0x7f09001b;
         /**  The title for the Most discussed video list. [CHAR LIMIT=20] 
          */
-        public static final int statistic_filter_most_discussed=0x7f080025;
+        public static final int statistic_filter_most_discussed=0x7f090025;
         /**  The title for the Most viewed video list. [CHAR LIMIT=20] 
          */
-        public static final int statistic_filter_most_viewed=0x7f080024;
+        public static final int statistic_filter_most_viewed=0x7f090024;
         /**  The title for the Top rated video list. [CHAR LIMIT=20] 
          */
-        public static final int statistic_filter_top_favorited=0x7f080023;
+        public static final int statistic_filter_top_favorited=0x7f090023;
         /**  Top statistic feed names 
  The title for the Top rated video list. [CHAR LIMIT=20] 
          */
-        public static final int statistic_filter_top_rated=0x7f080022;
+        public static final int statistic_filter_top_rated=0x7f090022;
         /**  Subtitles menu option and dialog title [CHAR LIMIT=20] 
          */
-        public static final int subtitles=0x7f08002d;
+        public static final int subtitles=0x7f09002d;
         /**  String displayed when there was a network error and the user can tap on the message to retry [CHAR LIMIT=30] 
          */
-        public static final int tap_to_retry=0x7f080019;
-        public static final int throw_tomato=0x7f08009e;
+        public static final int tap_to_retry=0x7f090019;
+        public static final int throw_tomato=0x7f09009e;
         /**  All time options for the time filter dialog box [CHAR LIMIT=20] 
          */
-        public static final int time_filter_all_time=0x7f08001f;
+        public static final int time_filter_all_time=0x7f09001f;
         /**  Next 24 hours options for the time filter dialog box [CHAR LIMIT=20] 
          */
-        public static final int time_filter_next_24_hours=0x7f080020;
+        public static final int time_filter_next_24_hours=0x7f090020;
         /**  Next 7 days options for the time filter dialog box [CHAR LIMIT=20] 
          */
-        public static final int time_filter_next_7_days=0x7f080021;
+        public static final int time_filter_next_7_days=0x7f090021;
         /**  This month options for the time filter dialog box [CHAR LIMIT=20] 
          */
-        public static final int time_filter_this_month=0x7f08001e;
+        public static final int time_filter_this_month=0x7f09001e;
         /**  This week options for the time filter dialog box [CHAR LIMIT=20] 
          */
-        public static final int time_filter_this_week=0x7f08001d;
+        public static final int time_filter_this_week=0x7f09001d;
         /**  Time filtering 
  Today options for the time filter dialog box [CHAR LIMIT=20] 
          */
-        public static final int time_filter_today=0x7f08001c;
+        public static final int time_filter_today=0x7f09001c;
         /**  Second line of the text which is displayed when the video can't be played because it is being processed by YouTube. This text suggests to the user to try to watch the video later. [CHAR LIMIT=40]  
          */
-        public static final int try_again_later=0x7f08003b;
+        public static final int try_again_later=0x7f09003b;
         /**  Text in the subtitles chooser [CHAR LIMIT=20] 
          */
-        public static final int turn_off_subtitles=0x7f08002e;
+        public static final int turn_off_subtitles=0x7f09002e;
         /**  Used to tag extra child buttons on the TVControlsView 
          */
-        public static final int tv_controller_extra_button=0x7f080000;
+        public static final int tv_controller_extra_button=0x7f090000;
         /**  Text displayed when the video can't be played because we can't connect to the server [CHAR LIMIT=40] 
          */
-        public static final int unable_to_connect=0x7f080040;
+        public static final int unable_to_connect=0x7f090040;
         /**  Text displayed when the video format is not supported [CHAR LIMIT=40] 
          */
-        public static final int unsupported_video_format=0x7f080042;
+        public static final int unsupported_video_format=0x7f090042;
         /**  Channel and MyChannel Activities 
  Title of the notification shown when a video upload was successfullly completed [CHAR LIMIT=50] 
          */
-        public static final int upload_finished_notification_title=0x7f080033;
+        public static final int upload_finished_notification_title=0x7f090033;
         /**  Text displayed when the video can't be played because the account of the uploader was suspended [CHAR LIMIT=40] 
          */
-        public static final int uploader_account_suspended=0x7f080048;
+        public static final int uploader_account_suspended=0x7f090048;
         /**   Reasons why videos are not playable under the FAILED state 
  Text displayed when the video can't be played because an error ocurred when it was processed/converted [CHAR LIMIT=40] 
          */
-        public static final int video_couldnt_be_processed=0x7f08004e;
+        public static final int video_couldnt_be_processed=0x7f09004e;
         /**  Reasons why videos are not playable under the REJECTED state 
  Text displayed when the video can't be played because it infringes copyright [CHAR LIMIT=40] 
          */
-        public static final int video_infringes_copyright=0x7f080044;
+        public static final int video_infringes_copyright=0x7f090044;
         /**  Text displayed when the video can't be played because the uploaded file is empty [CHAR LIMIT=40] 
          */
-        public static final int video_is_empty=0x7f080051;
+        public static final int video_is_empty=0x7f090051;
         /**  Text displayed when the video can't be played because it is in an invalid file format [CHAR LIMIT=40] 
          */
-        public static final int video_is_in_an_invalid_format=0x7f08004f;
+        public static final int video_is_in_an_invalid_format=0x7f09004f;
         /**  Text displayed when the video can't be played because it is private to the owner [CHAR LIMIT=40] 
          */
-        public static final int video_is_private=0x7f08004d;
+        public static final int video_is_private=0x7f09004d;
         /**  Text displayed when the video can't be played because the uploaded file is too small [CHAR LIMIT=40] 
          */
-        public static final int video_is_too_small=0x7f080052;
+        public static final int video_is_too_small=0x7f090052;
         /**  Text displayed when the video can't be played because it's not available [CHAR LIMIT=40] 
          */
-        public static final int video_not_available=0x7f08003d;
+        public static final int video_not_available=0x7f09003d;
         /**  Reasons why videos are not playable under the RESTRICTED state 
  Text displayed when the video can't be played because it is unavailable in the country of the user that is trying to play it [CHAR LIMIT=40] 
          */
-        public static final int video_not_available_in_your_country=0x7f08004b;
+        public static final int video_not_available_in_your_country=0x7f09004b;
         /**  Text displayed when the video can't be played because the content owner has not made it available on mobile (only available on the website) [CHAR LIMIT=160] 
          */
-        public static final int video_not_available_on_mobile=0x7f08004c;
+        public static final int video_not_available_on_mobile=0x7f09004c;
         /**  Label for 'private' video privacy  [CHAR LIMIT=20] 
          */
-        public static final int video_privacy_private=0x7f080031;
+        public static final int video_privacy_private=0x7f090031;
         /**  Label for 'public' video privacy [CHAR LIMIT=20] 
          */
-        public static final int video_privacy_public=0x7f080030;
+        public static final int video_privacy_public=0x7f090030;
         /**  Label for 'unlisted' video privacy [CHAR LIMIT=20] 
          */
-        public static final int video_privacy_unlisted=0x7f080032;
+        public static final int video_privacy_unlisted=0x7f090032;
         /**  Text displayed when the video can't be played because it is too long [CHAR LIMIT=40] 
          */
-        public static final int video_too_long=0x7f080049;
+        public static final int video_too_long=0x7f090049;
         /**  Text displayed when the video can't be played because it uses an unsupported codec [CHAR LIMIT=40] 
          */
-        public static final int video_uses_an_unsupported_codec=0x7f080050;
+        public static final int video_uses_an_unsupported_codec=0x7f090050;
         /**  Text displayed when the video can't be played because it violated the terms of use [CHAR LIMIT=40] 
          */
-        public static final int video_violated_terms_of_use=0x7f080047;
+        public static final int video_violated_terms_of_use=0x7f090047;
         /**  Text displayed when the video can't be played because it was deleted by the owner [CHAR LIMIT=40] 
          */
-        public static final int video_was_deleted=0x7f08003c;
+        public static final int video_was_deleted=0x7f09003c;
         /**  Text displayed when the video can't be played because it was judged as inappropriate [CHAR LIMIT=40] 
          */
-        public static final int video_was_judged_inappropriate=0x7f080045;
+        public static final int video_was_judged_inappropriate=0x7f090045;
         /**  TODO(horia): Clean up and group strings roughly around activities/features below this line. 
  Warnings 
  Message shown before a 3D is played to warn user about its high data consuming rate. [CHAR LIMIT= 100] 
          */
-        public static final int warning_3d_bandwidth=0x7f080006;
-        public static final int wifi=0x7f080026;
-        public static final int youtube_api_key=0x7f08009d;
-        public static final int youtube_api_version_name=0x7f08009c;
+        public static final int warning_3d_bandwidth=0x7f090006;
+        public static final int wifi=0x7f090026;
+        public static final int youtube_api_key=0x7f09009d;
+        public static final int youtube_api_version_name=0x7f09009c;
     }
     public static final class style {
-        public static final int TvControllerOverlay=0x7f0a0000;
-        public static final int TvControllerOverlayButton=0x7f0a0001;
-        public static final int TvLargeTextAppearance=0x7f0a0004;
-        public static final int TvMediumTextAppearance=0x7f0a0003;
+        public static final int TvControllerOverlay=0x7f0b0000;
+        public static final int TvControllerOverlayButton=0x7f0b0001;
+        public static final int TvLargeTextAppearance=0x7f0b0004;
+        public static final int TvMediumTextAppearance=0x7f0b0003;
         /**  Text styles 
          */
-        public static final int TvSmallTextAppearance=0x7f0a0002;
+        public static final int TvSmallTextAppearance=0x7f0b0002;
     }
+    public static final class styleable {
+        /** Attributes that can be used with a VideoOverlay.
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #VideoOverlay_object_animator com.awesome.fling.tv:object_animator}</code></td><td></td></tr>
+           </table>
+           @see #VideoOverlay_object_animator
+         */
+        public static final int[] VideoOverlay = {
+            0x7f010000
+        };
+        /**
+          <p>This symbol is the offset where the {@link com.awesome.fling.tv.R.attr#object_animator}
+          attribute's value can be found in the {@link #VideoOverlay} array.
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          @attr name android:object_animator
+        */
+        public static final int VideoOverlay_object_animator = 0;
+    };
 }

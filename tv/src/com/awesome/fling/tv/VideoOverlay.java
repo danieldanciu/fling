@@ -1,54 +1,67 @@
 package com.awesome.fling.tv;
 
-import android.content.BroadcastReceiver;
+import android.animation.AnimatorInflater;
+import android.animation.AnimatorSet;
 import android.content.Context;
-import android.content.Intent;
-import android.graphics.*;
+import android.content.res.TypedArray;
 import android.util.AttributeSet;
-import android.view.Display;
 import android.view.View;
-import android.view.WindowManager;
+import android.widget.ImageView;
 
-public class VideoOverlay extends View
+public class VideoOverlay extends ImageView
 {
-
-    private Bitmap tomato;
-    private int tomatoWidth;
-    private int tomatoHeight;
+    private AnimatorSet objectAnimatorSet = new AnimatorSet();
 
     public VideoOverlay(Context context)
     {
         super(context);
-        init();
+        init(null);
     }
 
     public VideoOverlay(Context context, AttributeSet attrs)
     {
         super(context, attrs);
-        init();
+        init(attrs);
     }
 
     public VideoOverlay(Context context, AttributeSet attrs, int defStyle)
     {
         super(context, attrs, defStyle);
-        init();
+        init(attrs);
     }
 
-    private void init()
+    private void init(AttributeSet attrs)
     {
-        tomato = BitmapFactory.decodeResource(getResources(), R.drawable.tomato);
-        tomatoWidth = tomato.getWidth();
-        tomatoHeight = tomato.getHeight();
-    }
+        int animatorId = -1;
 
-    @Override
-    protected void onDraw(Canvas canvas)
-    {
-        canvas.drawBitmap(tomato, (getWidth() / 2) - tomatoWidth / 2, (getHeight() / 2) - tomatoHeight / 2, null);
+        if (attrs != null)
+        {
+            TypedArray attrArray = getContext().obtainStyledAttributes(attrs, R.styleable.VideoOverlay);
+            final int count = attrArray.getIndexCount();
+            for (int i = 0; i < count; ++i)
+            {
+                int attrIndex = attrArray.getIndex(i);
+                switch (attrIndex)
+                {
+                    case R.styleable.VideoOverlay_object_animator:
+                        animatorId = attrArray.getResourceId(attrIndex, -1);
+                        break;
+                }
+            }
+            attrArray.recycle();
+        }
+
+        if (animatorId != -1)
+        {
+            objectAnimatorSet = (AnimatorSet) AnimatorInflater.loadAnimator(getContext(), animatorId);
+        }
+
+        objectAnimatorSet.setTarget(this);
     }
 
     public void onTomatoThrown()
     {
         setVisibility(View.VISIBLE);
+        objectAnimatorSet.start();
     }
 }

@@ -1,0 +1,3 @@
+<resources>
+    <integer name="tomato_splash_animation_duration">600</integer>
+</resources>
