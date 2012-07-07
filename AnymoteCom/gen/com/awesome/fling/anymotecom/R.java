@@ -69,7 +69,8 @@ public final class R {
         public static int pairing=0x7f030007;
     }
     public static final class menu {
-        public static int activity_test_com=0x7f080000;
+        public static int activity_main=0x7f080000;
+        public static int activity_test_com=0x7f080001;
     }
     public static final class string {
         public static int app_name=0x7f050000;
@@ -120,6 +121,7 @@ public final class R {
         public static int pairing_scan_qrcode=0x7f050023;
         public static int pairing_succeeded_toast=0x7f050020;
         public static int pairing_waiting=0x7f050022;
+        public static int title_activity_main=0x7f050029;
         public static int title_activity_test_com=0x7f050028;
         public static int unkown_tgt_addr=0x7f050002;
         public static int unkown_tgt_name=0x7f050001;

@@ -5,7 +5,7 @@
  * should not be modified by hand.
  */
 
-package com.awesome.fling;
+package com.example.google.tv.anymotelibrary;
 
 public final class R {
     public static final class attr {
