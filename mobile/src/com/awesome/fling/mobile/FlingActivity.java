@@ -12,15 +12,19 @@ import com.android.angle.AngleSegmentCollider;
 import com.android.angle.AngleSprite;
 import com.android.angle.AngleSpriteLayout;
 import com.android.angle.AngleUI;
+import com.android.angle.AngleVector;
 import com.android.angle.FPSCounter;
 import com.awesome.fling.R;
 
 import android.content.Context;
+import android.gesture.GestureOverlayView;
+import android.gesture.GestureOverlayView.OnGestureListener;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.os.Bundle;
+import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.widget.FrameLayout;
 
@@ -86,13 +90,17 @@ public class FlingActivity extends AngleActivity {
 			private Ball mBall;
 			private float x;
 			private float y;
+			private float dx;
+			private float dy;
+			
+
 			
 			public MyDemo(AngleActivity activity)
 			{
 				super(activity);
 				
 
-				mBallLayout = new AngleSpriteLayout(mGLSurfaceView, 64, 64, R.drawable.tomato, 0, 0, 128, 128);
+				mBallLayout = new AngleSpriteLayout(mGLSurfaceView, 256, 256, R.drawable.tomato, 0, 0, 128, 128);
 				mPhysics=new AnglePhysicsEngine(20);
 				mPhysics.mViscosity = 0f; // Air viscosity >Viscosidad del aire
 				addObject(mPhysics);
@@ -101,24 +109,29 @@ public class FlingActivity extends AngleActivity {
 				mPhysics.addObject(mBall);
 			}
 
+
 			@Override
 			public boolean onTouchEvent(MotionEvent event)
 			{
 				if (event.getAction()==MotionEvent.ACTION_DOWN || event.getAction()==MotionEvent.ACTION_MOVE)
 				{
 					mBall.mPosition.set(event.getX(), event.getY());
+					dx = event.getX() - x;
+					dy = event.getY() - y;
+					x = event.getX();
+					y = event.getY();
+					mBall.mVelocity.set(new AngleVector(0, 0));
 					
 				} else if (event.getAction() == MotionEvent.ACTION_UP){
-					mPhysics.mGravity.set(x * 3, y *3);
-					
+					mBall.mVelocity.set(new AngleVector(dx * 50, dy * 50));
 				}
 				return super.onTouchEvent(event);
 			}
 
 			public void setGravity(float x, float y)
 			{
-				this.x = x;
-				this.y = y;
+//				this.x = x;
+//				this.y = y;
 				
 				//mPhysics.mGravity.set(x*3,y*3);
 			}
