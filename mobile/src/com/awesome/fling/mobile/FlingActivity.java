@@ -127,7 +127,7 @@ public class FlingActivity extends AngleActivity {
 				} else if (event.getAction() == MotionEvent.ACTION_UP){
 					mBall.mVelocity.set(new AngleVector(dx * 50, dy * 50));
 					if (anymoteCommReady) {
-						//anymoteComm.sendString("ba");
+						anymoteComm.sendString("ba");
 					}
 				}
 				return super.onTouchEvent(event);
@@ -162,7 +162,7 @@ public class FlingActivity extends AngleActivity {
 			        		new AnymoteComm.OnConnectedListener() {
 			          @Override
 			          public void onConnected() {
-			        	  anymoteComm.sendString("ba");
+			        	  //anymoteComm.sendString("ba");
 			        	  anymoteCommReady = true;
 			          }
 			        });
