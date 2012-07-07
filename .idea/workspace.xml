@@ -18,6 +18,13 @@
     <list default="true" id="cd20683a-61e3-4721-9a85-8387af5b81fe" name="Default" comment="">
       <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/gen/com/awesome/fling/anymotecom/R.java" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/gen/com/example/google/tv/anymotelibrary/R.java" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/tv/classes.dex" afterPath="$PROJECT_DIR$/out/production/tv/classes.dex" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/tv/com/awesome/fling/tv/R$attr.class" afterPath="$PROJECT_DIR$/out/production/tv/com/awesome/fling/tv/R$attr.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/tv/com/awesome/fling/tv/R$drawable.class" afterPath="$PROJECT_DIR$/out/production/tv/com/awesome/fling/tv/R$drawable.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/tv/com/awesome/fling/tv/R.class" afterPath="$PROJECT_DIR$/out/production/tv/com/awesome/fling/tv/R.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/tv/tv.apk.res" afterPath="$PROJECT_DIR$/out/production/tv/tv.apk.res" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/tv/tv.apk.unaligned" afterPath="$PROJECT_DIR$/out/production/tv/tv.apk.unaligned" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/tv/tv.apk" afterPath="$PROJECT_DIR$/out/production/tv/tv.apk" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mobile/gen/com/awesome/fling/R.java" afterPath="$PROJECT_DIR$/mobile/gen/com/awesome/fling/R.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tv/gen/com/awesome/fling/tv/R.java" afterPath="$PROJECT_DIR$/tv/gen/com/awesome/fling/tv/R.java" />
