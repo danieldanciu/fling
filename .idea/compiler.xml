@@ -5,6 +5,9 @@
     <excludeFromCompile>
       <directory url="file://$PROJECT_DIR$/mobile/gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/tv/gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/youtube-android-library/gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/gen/gen" includeSubdirectories="true" />
     </excludeFromCompile>
     <resourceExtensions />
     <wildcardResourcePatterns>

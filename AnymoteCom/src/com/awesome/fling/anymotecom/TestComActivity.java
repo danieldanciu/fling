@@ -88,6 +88,5 @@ public class TestComActivity extends Activity {
     getMenuInflater().inflate(R.menu.activity_test_com, menu);
     return true;
   }
-
-
+    
 }
