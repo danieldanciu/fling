@@ -2,15 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cd20683a-61e3-4721-9a85-8387af5b81fe" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tv/res/drawable/icon.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tv/AndroidManifest.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tv/project.properties" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tv/src/com/awesome/fling/tv/MainActivity.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tv/tv.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tv/AndroidManifest.xml" afterPath="$PROJECT_DIR$/tv/AndroidManifest.xml" />
     </list>
     <ignored path="fling.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -71,7 +63,7 @@
       <file leaf-file-name="AndroidManifest.xml" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/tv/AndroidManifest.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="3" column="32" selection-start="181" selection-end="181" vertical-scroll-proportion="0.07550336">
+            <state line="13" column="0" selection-start="617" selection-end="617" vertical-scroll-proportion="0.32718122">
               <folding />
             </state>
           </provider>
@@ -488,7 +480,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/tv/AndroidManifest.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="32" selection-start="181" selection-end="181" vertical-scroll-proportion="0.07550336">
+        <state line="13" column="0" selection-start="617" selection-end="617" vertical-scroll-proportion="0.32718122">
           <folding />
         </state>
       </provider>
