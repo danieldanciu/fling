@@ -19,6 +19,11 @@ public class TestComActivity extends Activity {
           }
         });
   }
+  
+  @Override
+  public void onDestroy() {
+    //anymoteComm.unBind();
+  }
 
   @Override
   public boolean onCreateOptionsMenu(Menu menu) {

@@ -35,10 +35,10 @@ public class AnymoteCommImpl implements AnymoteComm {
       if (anymoteSender != null) {
         // Send events to Google TV using anymoteSender.
         // save handle to the anymoteSender instance.
+        AnymoteCommImpl.this.anymoteSender = anymoteSender;
         if (onConnectedListener != null) {
           onConnectedListener.onConnected();
         }
-        AnymoteCommImpl.this.anymoteSender = anymoteSender;
         
       } else {
         // Show message to tell the user that the connection failed.
