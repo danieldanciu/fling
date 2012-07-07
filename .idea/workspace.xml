@@ -16,18 +16,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cd20683a-61e3-4721-9a85-8387af5b81fe" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tv/res/drawable/tomato_icon.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dictionaries/savvasdalkitsis.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tv/res/menu/main_menu.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tv/src/com/awesome/fling/tv/TomatoThrownHandler.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tv/src/com/awesome/fling/tv/VideoOverlay.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Youtube-android-library.iml" afterPath="$PROJECT_DIR$/Youtube-android-library.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tv/gen/com/awesome/fling/tv/R.java" afterPath="$PROJECT_DIR$/tv/gen/com/awesome/fling/tv/R.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tv/res/layout/main.xml" afterPath="$PROJECT_DIR$/tv/res/layout/main.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tv/res/values/strings.xml" afterPath="$PROJECT_DIR$/tv/res/values/strings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tv/src/com/awesome/fling/tv/MainActivity.java" afterPath="$PROJECT_DIR$/tv/src/com/awesome/fling/tv/MainActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tv/src/com/awesome/fling/tv/VideoOverlay.java" afterPath="$PROJECT_DIR$/tv/src/com/awesome/fling/tv/VideoOverlay.java" />
     </list>
     <ignored path="fling.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -94,10 +85,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MainActivity.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="MainActivity.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tv/src/com/awesome/fling/tv/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="43" column="9" selection-start="1395" selection-end="1395" vertical-scroll-proportion="0.66086954">
+            <state line="43" column="9" selection-start="1395" selection-end="1395" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -105,10 +96,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="VideoOverlay.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="VideoOverlay.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/tv/src/com/awesome/fling/tv/VideoOverlay.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="50" column="19" selection-start="1140" selection-end="1140" vertical-scroll-proportion="0.0">
+            <state line="47" column="67" selection-start="1152" selection-end="1152" vertical-scroll-proportion="1.027027">
               <folding />
             </state>
           </provider>
@@ -118,9 +109,7 @@
         <entry file="file://$PROJECT_DIR$/tv/src/com/awesome/fling/tv/TomatoThrownHandler.java">
           <provider selected="true" editor-type-id="text-editor">
             <state line="22" column="26" selection-start="633" selection-end="633" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -182,10 +171,10 @@
         <option value="$PROJECT_DIR$/tv/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/tv/src/com/awesome/fling/tv/TomatoGlass.java" />
         <option value="$PROJECT_DIR$/tv/src/com/awesome/fling/tv/TomatoThrownHandler.java" />
-        <option value="$PROJECT_DIR$/tv/src/com/awesome/fling/tv/VideoOverlay.java" />
         <option value="$PROJECT_DIR$/tv/res/layout/main.xml" />
         <option value="$PROJECT_DIR$/tv/res/menu/main_menu.xml" />
         <option value="$PROJECT_DIR$/tv/src/com/awesome/fling/tv/MainActivity.java" />
+        <option value="$PROJECT_DIR$/tv/src/com/awesome/fling/tv/VideoOverlay.java" />
       </list>
     </option>
   </component>
@@ -224,6 +213,26 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope">
+        <subPane subId="Project Files">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="PackagesPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fling" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -436,26 +445,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fling" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
-      <pane id="Scope">
-        <subPane subId="Project Files">
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -474,8 +463,8 @@
     <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_AVD" value="ICS" />
     <property name="MemberChooser.showClasses" value="true" />
     <property name="GoToClass.includeLibraries" value="false" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -675,12 +664,12 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="-4" width="1368" height="773" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.329582" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32852808" sideWeight="0.670418" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24962063" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.329582" sideWeight="0.47723824" order="7" side_tool="true" content_ui="tabs" />
@@ -693,10 +682,10 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24962063" sideWeight="0.670418" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.329582" sideWeight="0.4969651" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.329582" sideWeight="0.4969651" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32852808" sideWeight="0.670418" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -760,13 +749,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/youtube-android-library/gen/com/google/android/youtube/R.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="19" selection-start="238" selection-end="238" vertical-scroll-proportion="-18.168097">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Youtube-android-library.iml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="39" column="73" selection-start="2324" selection-end="2324" vertical-scroll-proportion="0.87416106">
@@ -788,30 +770,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tv/src/com/awesome/fling/tv/FlingApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="0" selection-start="237" selection-end="237" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tv/res/values/strings.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="133" selection-start="145" selection-end="145" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$PROJECT_DIR$/youtube-android-library/libs/YouTubeAndroidApi.jar!/com/google/android/youtube/api/YouTubePlayerView.class">
       <provider selected="true" editor-type-id="text-editor">
         <state line="5" column="19" selection-start="174" selection-end="174" vertical-scroll-proportion="0.11173184">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tv/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="4" selection-start="830" selection-end="830" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -824,6 +785,32 @@
     <entry file="file://$PROJECT_DIR$/Images/tomato.png">
       <provider selected="true" editor-type-id="images">
         <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tv/res/drawable/splash.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tv/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="4" selection-start="830" selection-end="830" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tv/src/com/awesome/fling/tv/TomatoThrownHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="26" selection-start="633" selection-end="633" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tv/src/com/awesome/fling/tv/FlingApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="0" selection-start="237" selection-end="237" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tv/res/layout/main.xml">
@@ -840,33 +827,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tv/res/drawable/splash.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tv/src/com/awesome/fling/tv/VideoOverlay.java">
+    <entry file="file://$PROJECT_DIR$/tv/res/values/strings.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="50" column="19" selection-start="1140" selection-end="1140" vertical-scroll-proportion="0.0">
+        <state line="1" column="133" selection-start="145" selection-end="145" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tv/src/com/awesome/fling/tv/TomatoThrownHandler.java">
+    <entry file="file://$PROJECT_DIR$/tv/res/drawable/tomato.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tv/src/com/awesome/fling/tv/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="26" selection-start="633" selection-end="633" vertical-scroll-proportion="0.0">
+        <state line="43" column="9" selection-start="1395" selection-end="1395" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tv/src/com/awesome/fling/tv/MainActivity.java">
+    <entry file="file://$PROJECT_DIR$/tv/src/com/awesome/fling/tv/VideoOverlay.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="43" column="9" selection-start="1395" selection-end="1395" vertical-scroll-proportion="0.66086954">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state line="47" column="67" selection-start="1152" selection-end="1152" vertical-scroll-proportion="1.027027">
+          <folding />
         </state>
       </provider>
     </entry>

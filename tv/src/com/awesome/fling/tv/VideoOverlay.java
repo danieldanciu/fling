@@ -3,9 +3,7 @@ package com.awesome.fling.tv;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Canvas;
-import android.graphics.Color;
-import android.graphics.Paint;
+import android.graphics.*;
 import android.util.AttributeSet;
 import android.view.Display;
 import android.view.View;
@@ -15,6 +13,7 @@ public class VideoOverlay extends View
 {
 
     private Paint paint;
+    private Bitmap tomato;
 
     public VideoOverlay(Context context)
     {
@@ -40,12 +39,13 @@ public class VideoOverlay extends View
         paint.setStyle(Paint.Style.STROKE);
         paint.setColor(Color.RED);
         paint.setStrokeWidth(3);
+        tomato = BitmapFactory.decodeResource(getResources(), R.drawable.tomato);
     }
 
     @Override
     protected void onDraw(Canvas canvas)
     {
-        canvas.drawCircle(getWidth() / 2, getHeight() / 2, 50, paint);
+        canvas.drawBitmap(tomato, getWidth() / 2, getHeight() / 2, paint);
     }
 
     public void onTomatoThrown()
