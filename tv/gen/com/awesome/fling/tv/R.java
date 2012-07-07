@@ -9,10 +9,9 @@ package com.awesome.fling.tv;
 
 public final class R {
     public static final class anim {
-        public static final int old_tomato_splash=0x7f040000;
-        public static final int player_out=0x7f040001;
-        public static final int tv_key_action_begin=0x7f040002;
-        public static final int tv_key_action_end=0x7f040003;
+        public static final int player_out=0x7f040000;
+        public static final int tv_key_action_begin=0x7f040001;
+        public static final int tv_key_action_end=0x7f040002;
     }
     public static final class animator {
         public static final int tomato_splash=0x7f050000;
