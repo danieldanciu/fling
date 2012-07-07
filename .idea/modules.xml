@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/youtube-android-library/YouTubeAndroidAPI.iml" filepath="$PROJECT_DIR$/youtube-android-library/YouTubeAndroidAPI.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Youtube-android-library.iml" filepath="$PROJECT_DIR$/Youtube-android-library.iml" />
       <module fileurl="file://$PROJECT_DIR$/youtube-android-library/Youtube-android-library.iml" filepath="$PROJECT_DIR$/youtube-android-library/Youtube-android-library.iml" />
       <module fileurl="file://$PROJECT_DIR$/mobile/mobile.iml" filepath="$PROJECT_DIR$/mobile/mobile.iml" />
       <module fileurl="file://$PROJECT_DIR$/root.iml" filepath="$PROJECT_DIR$/root.iml" />
