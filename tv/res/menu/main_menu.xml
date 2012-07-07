@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/throw_tomato"
+        android:showAsAction="always"
+        android:title="@string/throw_tomato"
+        android:icon="@drawable/tomato_icon"/>
+
+</menu>
