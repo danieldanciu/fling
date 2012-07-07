@@ -2,31 +2,25 @@ package com.awesome.fling.mobile;
 
 import javax.microedition.khronos.opengles.GL10;
 
+import android.content.Context;
+import android.hardware.Sensor;
+import android.hardware.SensorEvent;
+import android.hardware.SensorEventListener;
+import android.hardware.SensorManager;
+import android.os.Bundle;
+import android.view.MotionEvent;
+import android.widget.FrameLayout;
+
 import com.android.angle.AngleActivity;
 import com.android.angle.AngleCircleCollider;
-import com.android.angle.AngleObject;
 import com.android.angle.AnglePhysicObject;
 import com.android.angle.AnglePhysicsEngine;
-import com.android.angle.AngleRotatingSprite;
-import com.android.angle.AngleSegmentCollider;
 import com.android.angle.AngleSprite;
 import com.android.angle.AngleSpriteLayout;
 import com.android.angle.AngleUI;
 import com.android.angle.AngleVector;
 import com.android.angle.FPSCounter;
 import com.awesome.fling.R;
-
-import android.content.Context;
-import android.gesture.GestureOverlayView;
-import android.gesture.GestureOverlayView.OnGestureListener;
-import android.hardware.Sensor;
-import android.hardware.SensorEvent;
-import android.hardware.SensorEventListener;
-import android.hardware.SensorManager;
-import android.os.Bundle;
-import android.view.GestureDetector;
-import android.view.MotionEvent;
-import android.widget.FrameLayout;
 
 public class FlingActivity extends AngleActivity {
 	
@@ -61,7 +55,7 @@ public class FlingActivity extends AngleActivity {
 				mSprite=new AngleSprite(layout);
 				addCircleCollider(new AngleCircleCollider(0, 0, 29));
 				mMass = 10;
-				mBounce = 0.6f; // Coefficient of restitution (1 return all the energy)  >Coeficiente de restitución (1 devuelve toda la energia)
+				mBounce = 0.6f; // Coefficient of restitution (1 return all the energy)  >Coeficiente de restituciï¿½n (1 devuelve toda la energia)
 			}
 
 			@Override
@@ -100,13 +94,16 @@ public class FlingActivity extends AngleActivity {
 				super(activity);
 				
 
-				mBallLayout = new AngleSpriteLayout(mGLSurfaceView, 256, 256, R.drawable.tomato, 0, 0, 128, 128);
+				mBallLayout = new AngleSpriteLayout(mGLSurfaceView, 256, 256, R.drawable.tomato, 0, 0, 256, 256);
 				mPhysics=new AnglePhysicsEngine(20);
 				mPhysics.mViscosity = 0f; // Air viscosity >Viscosidad del aire
 				addObject(mPhysics);
 
 				mBall = new Ball (mBallLayout);				
 				mPhysics.addObject(mBall);
+				
+				AngleRope rope = new AngleRope(0.0f, 0.0f, 2.0f, 5.0f);
+				mPhysics.addObject(rope);
 			}
 
 
@@ -146,7 +143,7 @@ public class FlingActivity extends AngleActivity {
 
 			mSensorManager = (SensorManager)getSystemService(Context.SENSOR_SERVICE); 
 	      
-			mGLSurfaceView.addObject(new FPSCounter());
+			//mGLSurfaceView.addObject(new FPSCounter());
 
 			FrameLayout mMainLayout=new FrameLayout(this);
 			mMainLayout.addView(mGLSurfaceView);
@@ -158,7 +155,7 @@ public class FlingActivity extends AngleActivity {
 
 
 		//Overload onPause and onResume to enable and disable the accelerometer
-		//Sobrecargamos onPause y onResume para activar y desactivar el acelerómetro
+		//Sobrecargamos onPause y onResume para activar y desactivar el acelerï¿½metro
 		@Override
 		protected void onPause()
 		{
