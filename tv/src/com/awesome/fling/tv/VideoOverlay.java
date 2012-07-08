@@ -69,7 +69,6 @@ public class VideoOverlay extends ImageView implements SplashListener
         objectAnimatorSet.start();
     }
 
-    @Override
     public void onSplashFinished()
     {
         setImageResource(R.drawable.tomato);

@@ -6,7 +6,6 @@ public interface SplashListener
 
     SplashListener NO_OP = new SplashListener() {
 
-        @Override
         public void onSplashFinished()
         {
         }

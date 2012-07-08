@@ -28,19 +28,16 @@ public class Splasher extends AnimatorListenerAdapter implements Animation.Anima
 
     // Animation listeners (old API)
 
-    @Override
     public void onAnimationStart(Animation animation)
     {
     }
 
-    @Override
     public void onAnimationEnd(Animation animation)
     {
         videoOverlay.setVisibility(View.INVISIBLE);
         splashListener.onSplashFinished();
     }
 
-    @Override
     public void onAnimationRepeat(Animation animation)
     {
     }
