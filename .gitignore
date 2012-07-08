@@ -1,5 +1,8 @@
 youtube-android-library
 mobile/bin
+mobile/gen
 out
 bin
 gen
+tv/gen
+.idea/workspace.xml
