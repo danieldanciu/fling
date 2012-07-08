@@ -135,8 +135,8 @@ public class MainActivity extends YouTubeBaseActivity {
     super.onStop();
     unregisterReceiver(tomatoThrownHandler);
     listener.unregisterReceiver();
-
   }
+
 
   private void initializeViews() {
     setContentView(R.layout.main);
