@@ -1,3 +1,4 @@
 <resources>
     <integer name="tomato_splash_animation_duration">1000</integer>
+    <integer name="tomato_splash_drop_animation_duration">2000</integer>
 </resources>

@@ -11,53 +11,33 @@ import android.widget.ImageView;
 public class VideoOverlay extends ImageView
 {
     private AnimatorSet objectAnimatorSet = new AnimatorSet();
+    private Splasher splasher;
 
     public VideoOverlay(Context context)
     {
         super(context);
-        init(null);
+        init();
     }
 
     public VideoOverlay(Context context, AttributeSet attrs)
     {
         super(context, attrs);
-        init(attrs);
+        init();
     }
 
     public VideoOverlay(Context context, AttributeSet attrs, int defStyle)
     {
         super(context, attrs, defStyle);
-        init(attrs);
+        init();
     }
 
-    private void init(AttributeSet attrs)
+    private void init()
     {
-        int animatorId = -1;
-
-        if (attrs != null)
-        {
-            TypedArray attrArray = getContext().obtainStyledAttributes(attrs, R.styleable.VideoOverlay);
-            final int count = attrArray.getIndexCount();
-            for (int i = 0; i < count; ++i)
-            {
-                int attrIndex = attrArray.getIndex(i);
-                switch (attrIndex)
-                {
-                    case R.styleable.VideoOverlay_object_animator:
-                        animatorId = attrArray.getResourceId(attrIndex, -1);
-                        break;
-                }
-            }
-            attrArray.recycle();
-        }
-
-        if (animatorId != -1)
-        {
-            objectAnimatorSet = (AnimatorSet) AnimatorInflater.loadAnimator(getContext(), animatorId);
-
-        }
-
-        objectAnimatorSet.addListener(new Splasher(this));
+        setImageResource(R.drawable.tomato);
+        setScaleType(ScaleType.CENTER);
+        objectAnimatorSet = (AnimatorSet) AnimatorInflater.loadAnimator(getContext(), R.animator.tomato_splash);
+        splasher = new Splasher(this);
+        objectAnimatorSet.addListener(splasher);
         objectAnimatorSet.setTarget(this);
     }
 
@@ -65,5 +45,10 @@ public class VideoOverlay extends ImageView
     {
         setVisibility(View.VISIBLE);
         objectAnimatorSet.start();
+    }
+
+    public void setSplashListener(SplashListener splashListener)
+    {
+        splasher.setSplashListener(splashListener);
     }
 }

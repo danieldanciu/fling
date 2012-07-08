@@ -43,6 +43,7 @@ public class DeviceManualIPDialog extends AlertDialog {
     private static final char[] ACCEPTED_CHARS = "0123456789.:".toCharArray();
     private final Context context;
     private ManualIPListener listener;
+    private String lastSavedIp = "192.168.145.163";
 
     /**
      * The listener for Manual IP Dialog.
@@ -88,6 +89,7 @@ public class DeviceManualIPDialog extends AlertDialog {
         View view = LayoutInflater.from(context).inflate(R.layout.device_select_manual_ip, null);
 
         final EditText ipEditText = (EditText) view.findViewById(R.id.manual_ip_entry);
+        ipEditText.setText(lastSavedIp);
 
         ipEditText.setFilters(new InputFilter[] {
         new NumberKeyListener() {

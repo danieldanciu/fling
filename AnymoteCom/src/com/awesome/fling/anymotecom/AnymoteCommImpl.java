@@ -25,7 +25,12 @@ public class AnymoteCommImpl implements AnymoteComm {
   public void sendString(String message) {
     Intent intent = new Intent(AnymoteComm.INTENT_SEND_STRING);
     intent.putExtra(AnymoteComm.DATA_MESSAGE, message);
-    anymoteSender.sendUrl(intent.toUri(Intent.URI_INTENT_SCHEME));
+    if (anymoteSender != null) {
+      anymoteSender.sendUrl(intent.toUri(Intent.URI_INTENT_SCHEME));
+    } else {
+      Intent intent2 = new Intent(context.getApplicationContext(), AnymoteClientService.class);
+      context.bindService(intent2, mConnection, Context.BIND_AUTO_CREATE);
+    }
   }
 
   private AnymoteSender anymoteSender;
@@ -40,7 +45,6 @@ public class AnymoteCommImpl implements AnymoteComm {
         if (onConnectedListener != null) {
           onConnectedListener.onConnected();
         }
-
       } else {
         // Show message to tell the user that the connection failed.
         // Try to connect again if needed.

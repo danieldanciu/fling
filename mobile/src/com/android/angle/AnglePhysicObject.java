@@ -106,7 +106,7 @@ public class AnglePhysicObject extends AngleObject
 
 	public void kynetics(AnglePhysicObject other, float normal)
 	{
-		// TODO rotar el sistema +normal, hacer los cálculos y volver a rotar
+		// TODO rotar el sistema +normal, hacer los clculos y volver a rotar
 		// -normal
 		float nCos = (float) Math.cos(normal);
 		float nSin = (float) Math.sin(normal);

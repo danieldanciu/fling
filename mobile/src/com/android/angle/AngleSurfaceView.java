@@ -250,7 +250,7 @@ public class AngleSurfaceView extends SurfaceView implements SurfaceHolder.Callb
 	}
 
 	//---------------------------------------------
-	//-- Problemas de no tener herencia múltiple --
+	//-- Problemas de no tener herencia mltiple --
 	//---------------------------------------------
 	/**
 	 * Used by the engine to put the new objects in the childs list. Do not use after engine is running.

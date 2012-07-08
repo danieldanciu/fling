@@ -6,6 +6,9 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+
+import android.widget.FrameLayout;
+import com.awesome.fling.anymotecom.listener.Listener;
 import com.google.android.youtube.api.YouTubeBaseActivity;
 import com.google.android.youtube.api.YouTubePlayer;
 import com.google.android.youtube.api.YouTubePlayerView;
@@ -16,8 +19,8 @@ public class MainActivity extends YouTubeBaseActivity
     private static final IntentFilter TOMATO_THROWN_INTENT_FILTER = new IntentFilter(ACTION_TOMATO_THROWN);
 
     private YouTubePlayer youtubePlayer;
-    private VideoOverlay overlay;
     private TomatoThrownHandler tomatoThrownHandler;
+    private Listener listener;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -27,6 +30,7 @@ public class MainActivity extends YouTubeBaseActivity
 
         // this will be replaced by incoming message from the device to load video
         youtubePlayer.loadVideo("vbDImUxb2nA");
+        listener = new Listener(this, new AnymoteEventListener());
     }
 
     @Override
@@ -53,6 +57,7 @@ public class MainActivity extends YouTubeBaseActivity
     {
         super.onPause();
         unregisterReceiver(tomatoThrownHandler);
+        listener.unregisterReceiver();
     }
 
     @Override
@@ -60,8 +65,9 @@ public class MainActivity extends YouTubeBaseActivity
     {
         super.onResume();
         registerReceiver(tomatoThrownHandler, TOMATO_THROWN_INTENT_FILTER);
+        listener.registerReceiver();
     }
-
+    
     private void initializeViews()
     {
         setContentView(R.layout.main);
@@ -73,7 +79,7 @@ public class MainActivity extends YouTubeBaseActivity
         youtubePlayerView.setUseSurfaceTexture(true);
         youtubePlayer = youtubePlayerView;
 
-        overlay = (VideoOverlay) findViewById(R.id.overlay);
-        tomatoThrownHandler = new TomatoThrownHandler(overlay, youtubePlayer);
+        FrameLayout tomatoContainer = (FrameLayout) findViewById(R.id.tomato_container);
+        tomatoThrownHandler = new TomatoThrownHandler(tomatoContainer, youtubePlayer);
     }
 }
