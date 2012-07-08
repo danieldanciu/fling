@@ -60,10 +60,12 @@ public class FlingActivity extends AngleActivity {
 
 	private class Tomato extends AnglePhysicObject {
 		private AngleSprite mSprite;
+		private Sling mSling;
 
-		public Tomato(AngleSpriteLayout layout) {
+		public Tomato(AngleSpriteLayout layout, Sling sling) {
 			super(0, 1);
 			mSprite = new AngleSprite(layout);
+			mSling = sling;
 		}
 
 		@Override
@@ -77,18 +79,35 @@ public class FlingActivity extends AngleActivity {
 			mSprite.draw(gl);
 		}
 
+		public void setPosition(float x, float y) {
+			this.mPosition.set(x, y);
+		}
+		
+		@Override
+		public void step(float secondsElapsed) {
+			notifySling();
+		}
+
+		private void notifySling() {
+			this.mSling.updateObjectPosition(
+				this.mPosition.mX, this.mPosition.mY);
+		}
+
+		public void putBack(int screenWidth, int screenHeight) {
+			setPosition(screenWidth / 2.0f, screenHeight / 4.0f);
+			mVelocity.set(new AngleVector(0, 0));
+		}
 	};
 
 	private class Sling extends AnglePhysicObject {
 		private AngleRotatingSprite ropeLeft;
 		private AngleRotatingSprite ropeRight;
 
-		private int screenWidth;
-
+		private float screenWidth;
 
 		public Sling(int screenWidth) {
 			super(0, 0);
-			this.screenWidth = screenWidth;
+			this.screenWidth = (float) screenWidth;
 			
 			ropeLeft = new AngleRotatingSprite(0, 0, new AngleSpriteLayout(mGLSurfaceView, 32, 4096, R.drawable.rope, 0, 0, 8, 512));
 			ropeRight = new AngleRotatingSprite(0, 0, new AngleSpriteLayout(mGLSurfaceView, 32, 4096, R.drawable.rope, 0, 0, 8, 512));
@@ -99,15 +118,15 @@ public class FlingActivity extends AngleActivity {
 			mPhysicsEngine.addObject(ropeRight);
 		}
 
-		public void updateObjectPosition(int x, int y) {
+		public void updateObjectPosition(float x, float y) {
 			y = y + 40;
 			ropeLeft.mPosition.mX = x;
 			ropeLeft.mPosition.mY = y;
-			ropeLeft.mRotation = FloatMath.sin((float)x/(float)y) * (180.0f / (float) Math.PI);
+			ropeLeft.mRotation = FloatMath.sin(x/y) * (180.0f / (float) Math.PI);
 			
 			ropeRight.mPosition.mX = x;
 			ropeRight.mPosition.mY = y;
-			ropeRight.mRotation = -FloatMath.sin((float)(screenWidth-x)/(float)y) * (180.0f / (float) Math.PI);
+			ropeRight.mRotation = -FloatMath.sin((screenWidth-x)/y) * (180.0f / (float) Math.PI);
 		}
 	};
 
@@ -130,24 +149,22 @@ public class FlingActivity extends AngleActivity {
 					R.drawable.tomato, 0, 0, 256, 256);
 
 			mPhysicsEngine = new TomatoPhysicsEngine(3);
-			mBall = new Tomato(mBallLayout);
 
 			Display display = getWindowManager().getDefaultDisplay();
 			Point size = new Point();
 			display.getSize(size);
 			screenWidth = size.x;
 			screenHeight = size.y;
-
-			mBall.mPosition.set(screenWidth / 2, screenHeight / 3);
 			
 			sling = new Sling(screenWidth);
+
+			mBall = new Tomato(mBallLayout, sling);
+			mBall.putBack(screenWidth, screenHeight);
 			
-			Log.d(FlingActivity.class.getCanonicalName(), "Ball is at "
-					+ mBall.mPosition.mX + " " + mBall.mPosition.mY);
 			isDragging = false;
 			
-			mPhysicsEngine.addObject(mBall);
 			sling.addToDemo(mPhysicsEngine);
+			mPhysicsEngine.addObject(mBall);
 			addObject(mPhysicsEngine);
 		}
 
@@ -156,12 +173,9 @@ public class FlingActivity extends AngleActivity {
 
 			float y = event.getY();
 			float x = event.getX();
-			Log.d(FlingActivity.class.getCanonicalName(), "Event is at "
-					+ x + " " + y);
 
 			switch (event.getAction()) {
 			case MotionEvent.ACTION_DOWN:
-				Log.d(FlingActivity.class.getCanonicalName(), "DOWN");
 				if (!isDragging && !isThrowing) {
 					int left = (int) (mBall.mPosition.mX - 128);
 					int top = (int) (mBall.mPosition.mY - 128);
@@ -169,27 +183,21 @@ public class FlingActivity extends AngleActivity {
 					int bottom = top + 256;
 					if (left <= x && x <= right
 							&& top <= y && y <= bottom) {
-						Log.d(LOG_TAG, "============ Rectangle " + left + " "
-								+ top + " " + right + " " + bottom);
 						isDragging = true;
 					}
 
 				}
 				break;
 			case MotionEvent.ACTION_MOVE:
-				Log.d(FlingActivity.class.getCanonicalName(), "MOVE");
 				if (isDragging && !isThrowing) {
-					mBall.mPosition.set(x, y);
-					sling.updateObjectPosition((int) x, (int) y);
+					mBall.setPosition(x, y);
 					mBall.mVelocity.set(new AngleVector(0, 0));
 				}
 				break;
 			case MotionEvent.ACTION_UP:
-				Log.d(FlingActivity.class.getCanonicalName(), "UP");
 				if (isDragging) {
 					dx = screenWidth / 2 - x;
-					mBall.mVelocity.set(new AngleVector(dx * 5,
-							-y * 4));
+					mBall.mVelocity.set(new AngleVector(dx * 5, -y * 4));
 					isDragging = false;
 					isThrowing = true;
 					
@@ -202,9 +210,7 @@ public class FlingActivity extends AngleActivity {
 						@Override
 						public void run() {
 							isThrowing = false;
-							mBall.mPosition.set(screenWidth / 2,
-									screenHeight / 3);
-							mBall.mVelocity.set(new AngleVector(0, 0));
+							mBall.putBack(screenWidth, screenHeight);
 						}
 					}, 500);
 
