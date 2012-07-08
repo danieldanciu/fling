@@ -39,6 +39,7 @@
     <orderEntry type="jdk" jdkName="Android 4.0.3 Platform" jdkType="Android SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="Youtube-android-library" />
+    <orderEntry type="module" module-name="AnymoteCom" />
   </component>
 </module>
 

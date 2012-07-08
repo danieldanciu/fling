@@ -8,7 +8,7 @@ import android.util.AttributeSet;
 import android.view.View;
 import android.widget.ImageView;
 
-public class VideoOverlay extends ImageView
+public class VideoOverlay extends ImageView implements SplashListener
 {
     private AnimatorSet objectAnimatorSet = new AnimatorSet();
 
@@ -57,7 +57,9 @@ public class VideoOverlay extends ImageView
 
         }
 
-        objectAnimatorSet.addListener(new Splasher(this));
+        Splasher splasher = new Splasher(this);
+        splasher.setSplashListener(this);
+        objectAnimatorSet.addListener(splasher);
         objectAnimatorSet.setTarget(this);
     }
 
@@ -65,5 +67,11 @@ public class VideoOverlay extends ImageView
     {
         setVisibility(View.VISIBLE);
         objectAnimatorSet.start();
+    }
+
+    @Override
+    public void onSplashFinished()
+    {
+        setImageResource(R.drawable.tomato);
     }
 }
