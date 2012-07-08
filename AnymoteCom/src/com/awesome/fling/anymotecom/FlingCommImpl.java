@@ -27,4 +27,9 @@ public class FlingCommImpl implements FlingComm {
     anymoteComm.sendString("play " + videoId);
   }
 
+  @Override
+  public void release() {
+    anymoteComm.release();
+  }
+
 }

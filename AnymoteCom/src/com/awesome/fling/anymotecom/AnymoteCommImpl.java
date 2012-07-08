@@ -40,7 +40,6 @@ public class AnymoteCommImpl implements AnymoteComm {
         if (onConnectedListener != null) {
           onConnectedListener.onConnected();
         }
-
       } else {
         // Show message to tell the user that the connection failed.
         // Try to connect again if needed.
