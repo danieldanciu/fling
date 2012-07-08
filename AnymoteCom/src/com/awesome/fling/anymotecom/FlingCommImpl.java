@@ -5,7 +5,7 @@ import android.content.Context;
 import com.awesome.fling.anymotecom.AnymoteComm.OnConnectedListener;
 
 public class FlingCommImpl implements FlingComm {
-  
+
   private AnymoteCommImpl anymoteComm;
 
   public FlingCommImpl(Context context, OnConnectedListener onConnectedListener) {
@@ -13,10 +13,10 @@ public class FlingCommImpl implements FlingComm {
   }
 
   @Override
-  public void throwTomato(boolean isFresh, int x, int y) {
-    anymoteComm.sendXY(x, y);
+  public void throwTomato(float x, float y) {
+    anymoteComm.sendXY((int) (x * 100), ((int) (100 * y)));
   }
-  
+
   @Override
   public void pauseVideo() {
     anymoteComm.sendString("pause");
