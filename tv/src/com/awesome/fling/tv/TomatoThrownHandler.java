@@ -26,18 +26,6 @@ public class TomatoThrownHandler extends BroadcastReceiver implements SplashList
     {
         this.tomatoContainer = tomatoContainer;
         this.youtubePlayer = youtubePlayer;
-
-        init();
-    }
-
-    private void init()
-    {
-        WindowManager wm = (WindowManager) tomatoContainer.getContext().getSystemService(Context.WINDOW_SERVICE);
-        Display display = wm.getDefaultDisplay();
-
-        // we are using api 12 which doesn't have the method getSize so we use the deprecated methods.
-        screenWidth = display.getWidth();
-        screenHeight = display.getHeight();
     }
 
     @Override
@@ -53,10 +41,7 @@ public class TomatoThrownHandler extends BroadcastReceiver implements SplashList
         float x = random.nextFloat();
         float y = random.nextFloat();
 
-        int locationX = (int) (screenWidth * x);
-        int locationY = (int) (screenHeight * y);
-
-        tomatoOverlay.onTomatoThrown(locationX, locationY);
+        tomatoOverlay.onTomatoThrown(x, y);
     }
 
     public void onSplashFinished(View viewDisplayingTheSplash)

@@ -8,6 +8,7 @@ import android.graphics.*;
 import android.util.AttributeSet;
 import android.view.Display;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.ImageView;
 
 import java.util.Random;
@@ -22,6 +23,8 @@ public class VideoOverlay extends ImageView
     private int cornerLocationX;
     private int cornerLocationY;
     private Paint paint;
+    private int screenWidth;
+    private int screenHeight;
 
     public VideoOverlay(Context context)
     {
@@ -53,6 +56,8 @@ public class VideoOverlay extends ImageView
         objectAnimatorSet.setTarget(this);
 
         paint = new Paint();
+
+        setScreenSize();
     }
 
     @Override
@@ -62,8 +67,11 @@ public class VideoOverlay extends ImageView
         canvas.drawBitmap(bitmap, cornerLocationX, cornerLocationY +  getTranslationY(), paint);
     }
 
-    public void onTomatoThrown(int locationX, int locationY)
+    public void onTomatoThrown(float x, float y)
     {
+        int locationX = (int) ((screenWidth - bitmapWidth) * x) + bitmapWidth / 2;
+        int locationY = (int) ((screenHeight - bitmapHeight) * y) + bitmapHeight / 2;
+
         cornerLocationX = locationX - bitmapWidth;
         cornerLocationY = locationY - bitmapHeight;
 
@@ -72,6 +80,17 @@ public class VideoOverlay extends ImageView
 
         setVisibility(View.VISIBLE);
         objectAnimatorSet.start();
+    }
+
+
+    private void setScreenSize()
+    {
+        WindowManager wm = (WindowManager) getContext().getSystemService(Context.WINDOW_SERVICE);
+        Display display = wm.getDefaultDisplay();
+
+        // we are using api 12 which doesn't have the method getSize so we use the deprecated methods.
+        screenWidth = display.getWidth();
+        screenHeight = display.getHeight();
     }
 
     public void setSplashListener(SplashListener splashListener)
