@@ -14,11 +14,12 @@
       </GlobalState>
     </option>
   </component>
-  <component name="AndroidLogFilters">
-    <option name="TOOL_WINDOW_LOG_LEVEL" value="ERROR" />
-  </component>
   <component name="ChangeListManager">
-    <list default="true" id="cd20683a-61e3-4721-9a85-8387af5b81fe" name="Default" comment="" />
+    <list default="true" id="cd20683a-61e3-4721-9a85-8387af5b81fe" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tv/src/com/awesome/fling/tv/Splasher.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tv/src/com/awesome/fling/tv/VideoOverlay.java" afterPath="$PROJECT_DIR$/tv/src/com/awesome/fling/tv/VideoOverlay.java" />
+    </list>
     <ignored path="fling.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -75,10 +76,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="MainActivity.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="MainActivity.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tv/src/com/awesome/fling/tv/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="72" column="53" selection-start="2148" selection-end="2148" vertical-scroll-proportion="0.5540541">
+            <state line="72" column="53" selection-start="2148" selection-end="2148" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -87,8 +88,19 @@
       <file leaf-file-name="VideoOverlay.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tv/src/com/awesome/fling/tv/VideoOverlay.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="56" selection-start="541" selection-end="541" vertical-scroll-proportion="0.0">
+            <state line="59" column="55" selection-start="1665" selection-end="1665" vertical-scroll-proportion="0.0">
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Splasher.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/tv/src/com/awesome/fling/tv/Splasher.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="19" column="0" selection-start="449" selection-end="449" vertical-scroll-proportion="0.7567568">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -106,15 +118,6 @@
         <entry file="file://$PROJECT_DIR$/tv/AndroidManifest.xml">
           <provider selected="true" editor-type-id="text-editor">
             <state line="8" column="24" selection-start="415" selection-end="415" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="numbers.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tv/res/values/numbers.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="1" column="55" selection-start="67" selection-end="67" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -178,7 +181,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/tv/src/com/awesome/fling/tv/FlingApplication.java" />
         <option value="$PROJECT_DIR$/tv/res/layout/tomato_glass.xml" />
         <option value="$PROJECT_DIR$/tv/src/com/awesome/fling/tv/TomatoGlass.java" />
         <option value="$PROJECT_DIR$/tv/src/com/awesome/fling/tv/TomatoThrownHandler.java" />
@@ -188,12 +190,13 @@
         <option value="$PROJECT_DIR$/tv/res/values/animation.xml" />
         <option value="$PROJECT_DIR$/tv/res/anim/tomato_splash.xml" />
         <option value="$PROJECT_DIR$/tv/res/values/attrs.xml" />
-        <option value="$PROJECT_DIR$/tv/src/com/awesome/fling/tv/VideoOverlay.java" />
         <option value="$PROJECT_DIR$/tv/res/layout/main.xml" />
         <option value="$PROJECT_DIR$/tv/res/values/numbers.xml" />
         <option value="$PROJECT_DIR$/tv/res/animator/tomato_splash.xml" />
         <option value="$PROJECT_DIR$/tv/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/tv/src/com/awesome/fling/tv/MainActivity.java" />
+        <option value="$PROJECT_DIR$/tv/src/com/awesome/fling/tv/VideoOverlay.java" />
+        <option value="$PROJECT_DIR$/tv/src/com/awesome/fling/tv/Splasher.java" />
       </list>
     </option>
   </component>
@@ -345,6 +348,28 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fling" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fling" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tv" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="drawable" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -785,17 +810,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tv/src/com/awesome/fling/tv/VideoOverlay.java">
+    <entry file="file://$PROJECT_DIR$/tv/src/com/awesome/fling/tv/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="56" selection-start="541" selection-end="541" vertical-scroll-proportion="0.0">
+        <state line="72" column="53" selection-start="2148" selection-end="2148" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tv/src/com/awesome/fling/tv/MainActivity.java">
+    <entry file="file://$PROJECT_DIR$/tv/src/com/awesome/fling/tv/VideoOverlay.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="72" column="53" selection-start="2148" selection-end="2148" vertical-scroll-proportion="0.5540541">
+        <state line="59" column="55" selection-start="1665" selection-end="1665" vertical-scroll-proportion="0.0">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tv/src/com/awesome/fling/tv/Splasher.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="0" selection-start="449" selection-end="449" vertical-scroll-proportion="0.7567568">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
