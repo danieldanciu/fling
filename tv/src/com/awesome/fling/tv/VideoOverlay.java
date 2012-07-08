@@ -60,14 +60,14 @@ public class VideoOverlay extends ImageView
 
     public void onTomatoThrown(int locationX, int locationY)
     {
-        locationX -= bitmapWidth/2;
-        locationY -= bitmapHeight/2;
+        int cornerLocationX = locationX - bitmapWidth;
+        int cornerLocationY = locationY - bitmapHeight;
         Matrix matrix = new Matrix();
-        matrix.setTranslate(locationX, locationY);
+        matrix.setTranslate(cornerLocationX, cornerLocationY);
         setImageMatrix(matrix);
 
-        setPivotX(0);
-        setPivotY(0);
+        setPivotX(locationX);
+        setPivotY(locationY);
 
         setVisibility(View.VISIBLE);
         objectAnimatorSet.start();
