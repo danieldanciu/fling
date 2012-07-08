@@ -7,4 +7,10 @@ out
 bin
 gen
 tv/gen
+AnymoteLibrary/bin
 .idea/workspace.xml
+mobile/gen/com/awesome/fling/anymotecom/R.java
+mobile/gen/com/example/google/tv/anymotelibrary/R.java
+youtube-android-library/gen/com/google/android/youtube/R.java
+AnymoteLibrary/gen/com/example/google/tv/anymotelibrary/R.java
+tv/gen/com/google/android/youtube/R.java

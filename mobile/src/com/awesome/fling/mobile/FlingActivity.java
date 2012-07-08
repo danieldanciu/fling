@@ -2,26 +2,10 @@ package com.awesome.fling.mobile;
 
 import javax.microedition.khronos.opengles.GL10;
 
-import com.android.angle.AngleActivity;
-import com.android.angle.AngleCircleCollider;
-import com.android.angle.AnglePhysicObject;
-import com.android.angle.AnglePhysicsEngine;
-import com.android.angle.AngleSprite;
-import com.android.angle.AngleSpriteLayout;
-import com.android.angle.AngleUI;
-import com.android.angle.AngleVector;
-import com.android.angle.FPSCounter;
-
-import com.awesome.fling.R;
-import com.awesome.fling.anymotecom.AnymoteComm;
-import com.awesome.fling.anymotecom.AnymoteCommImpl;
-
+import android.annotation.TargetApi;
 import android.content.Context;
 import android.content.res.Configuration;
-import android.gesture.GestureOverlayView;
-import android.gesture.GestureOverlayView.OnGestureListener;
 import android.graphics.Point;
-import android.graphics.Rect;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
@@ -29,12 +13,24 @@ import android.hardware.SensorManager;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.HandlerThread;
+import android.util.FloatMath;
 import android.util.Log;
 import android.view.Display;
-import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.widget.FrameLayout;
-import android.widget.TextView;
+
+import com.android.angle.AngleActivity;
+import com.android.angle.AnglePhysicObject;
+import com.android.angle.AnglePhysicsEngine;
+import com.android.angle.AngleRotatingSprite;
+import com.android.angle.AngleSprite;
+import com.android.angle.AngleSpriteLayout;
+import com.android.angle.AngleUI;
+import com.android.angle.AngleVector;
+import com.awesome.fling.R;
+import com.awesome.fling.anymotecom.AnymoteComm;
+import com.awesome.fling.anymotecom.FlingComm;
+import com.awesome.fling.anymotecom.FlingCommImpl;
 
 public class FlingActivity extends AngleActivity implements SensorEventListener {
 	
@@ -64,7 +60,7 @@ public class FlingActivity extends AngleActivity implements SensorEventListener 
     private float m_tiltCentreY = 0.f;
     private float m_tiltCentreZ = 0.f;
 
-	private AnymoteComm anymoteComm;
+	private FlingComm anymoteComm;
 	private boolean anymoteCommReady;
 
 	private final static String LOG_TAG = FlingActivity.class
@@ -93,15 +89,12 @@ public class FlingActivity extends AngleActivity implements SensorEventListener 
 
 	private class Tomato extends AnglePhysicObject {
 		private AngleSprite mSprite;
+		private Sling mSling;
 
-		public Tomato(AngleSpriteLayout layout) {
+		public Tomato(AngleSpriteLayout layout, Sling sling) {
 			super(0, 1);
 			mSprite = new AngleSprite(layout);
-			addCircleCollider(new AngleCircleCollider(0, 0, 29));
-			mMass = 10;
-			mBounce = 0.6f; // Coefficient of restitution (1 return all the
-							// energy) >Coeficiente de restituci�n (1 devuelve
-							// toda la energia)
+			mSling = sling;
 		}
 
 		@Override
@@ -113,79 +106,107 @@ public class FlingActivity extends AngleActivity implements SensorEventListener 
 		public void draw(GL10 gl) {
 			mSprite.mPosition.set(mPosition);
 			mSprite.draw(gl);
-			// Draw colliders (beware calls GC)
-			// >Dibujado de los lolisionadores (cuidado, llama al GC)
-			// drawColliders(gl);
 		}
 
+		public void setPosition(float x, float y) {
+			this.mPosition.set(x, y);
+		}
+		
+		@Override
+		public void step(float secondsElapsed) {
+			notifySling();
+		}
+
+		private void notifySling() {
+			this.mSling.updateObjectPosition(
+				this.mPosition.mX, this.mPosition.mY);
+		}
+
+		public void putBack(int screenWidth, int screenHeight) {
+			setPosition(screenWidth / 2.0f, screenHeight / 4.0f);
+			mVelocity.set(new AngleVector(0, 0));
+		}
 	};
 
 	private class Sling extends AnglePhysicObject {
-		private AngleSprite leftSprite;
-		private AngleSprite rightSprite;
+		private AngleRotatingSprite ropeLeft;
+		private AngleRotatingSprite ropeRight;
 
-		public Sling(AngleSpriteLayout left, AngleSpriteLayout right) {
+		private float screenWidth;
+
+		public Sling(int screenWidth) {
 			super(0, 0);
-			leftSprite = new AngleSprite(left);
-			rightSprite = new AngleSprite(right);
-
-			mMass = 10;
-			mBounce = 0.6f; // Coefficient of restitution (1 return all the
-							// energy) >Coeficiente de restitucin (1 devuelve
-							// toda la energia)
+			this.screenWidth = (float) screenWidth;
+			
+			ropeLeft = new AngleRotatingSprite(0, 0, new AngleSpriteLayout(mGLSurfaceView, 32, 4096, R.drawable.rope, 0, 0, 8, 512));
+			ropeRight = new AngleRotatingSprite(0, 0, new AngleSpriteLayout(mGLSurfaceView, 32, 4096, R.drawable.rope, 0, 0, 8, 512));
 		}
 
-		@Override
-		public float getSurface() {
-			return 29 * 2; // Radius * 2 >Radio * 2
+		public void addToDemo(AnglePhysicsEngine mPhysicsEngine) {
+			mPhysicsEngine.addObject(ropeLeft);
+			mPhysicsEngine.addObject(ropeRight);
 		}
 
-		@Override
-		public void draw(GL10 gl) {
-			leftSprite.draw(gl);
-
+		public void updateObjectPosition(float x, float y) {
+			y = y + 40;
+			ropeLeft.mPosition.mX = x;
+			ropeLeft.mPosition.mY = y;
+			ropeLeft.mRotation = FloatMath.sin(x/y) * (180.0f / (float) Math.PI);
+			
+			ropeRight.mPosition.mX = x;
+			ropeRight.mPosition.mY = y;
+			ropeRight.mRotation = -FloatMath.sin((screenWidth-x)/y) * (180.0f / (float) Math.PI);
 		}
-
 	};
 
 	private class MyDemo extends AngleUI {
 		AngleSpriteLayout mBallLayout;
-		AnglePhysicsEngine mPhysics;
 		private Tomato mBall;
-		private float x;
-		private float y;
+		private Sling sling;
 		private float dx;
-		private float dy;
+		private int screenWidth;
+		private int screenHeight;
+		private AnglePhysicsEngine mPhysicsEngine;
 		
 		private boolean isDragging;
 		private boolean isThrowing;
-		private double procentageX;
-		private double procentageY;
+		private double percentageX;
+		private double percentageY;
 
+		@TargetApi(13)
 		public MyDemo(AngleActivity activity) {
 			super(activity);
 
 			mBallLayout = new AngleSpriteLayout(mGLSurfaceView, 256, 256,
 					R.drawable.tomato, 0, 0, 256, 256);
-			mPhysics = new AnglePhysicsEngine(20);
-			mPhysics.mViscosity = 0f; // Air viscosity >Viscosidad del aire
-			addObject(mPhysics);
 
-			mBall = new Tomato(mBallLayout);
-			mPhysics.addObject(mBall);
+			mPhysicsEngine = new AnglePhysicsEngine(3);
+
+			Display display = getWindowManager().getDefaultDisplay();
+			Point size = new Point();
+			display.getSize(size);
+			screenWidth = size.x;
+			screenHeight = size.y;
+			
+			sling = new Sling(screenWidth);
+
+			mBall = new Tomato(mBallLayout, sling);
+			mBall.putBack(screenWidth, screenHeight);
 			
 			detectScreenSize();
-			mBall.mPosition.set(screenWidth / 2, screenHeight / 3);
-			Log.d(FlingActivity.class.getCanonicalName(), "Ball is at "
-					+ mBall.mPosition.mX + " " + mBall.mPosition.mY);
+			mBall.putBack(screenWidth, screenHeight);
 			isDragging = false;
+			
+			sling.addToDemo(mPhysicsEngine);
+			mPhysicsEngine.addObject(mBall);
+			addObject(mPhysicsEngine);
 		}
 
 		@Override
 		public boolean onTouchEvent(MotionEvent event) {
 
-			Log.d(FlingActivity.class.getCanonicalName(), "Event is at "
-					+ event.getX() + " " + event.getY());
+			float y = event.getY();
+			float x = event.getX();
 
 			switch (event.getAction()) {
 			case MotionEvent.ACTION_DOWN:
@@ -194,10 +215,8 @@ public class FlingActivity extends AngleActivity implements SensorEventListener 
 					int top = (int) (mBall.mPosition.mY - 128);
 					int right = left + 256;
 					int bottom = top + 256;
-					if (left <= event.getX() && event.getX() <= right
-							&& top <= event.getY() && event.getY() <= bottom) {
-						Log.d(LOG_TAG, "============ Rectangle " + left + " "
-								+ top + " " + right + " " + bottom);
+					if (left <= x && x <= right
+							&& top <= y && y <= bottom) {
 						isDragging = true;
 					}
 
@@ -205,26 +224,26 @@ public class FlingActivity extends AngleActivity implements SensorEventListener 
 				break;
 			case MotionEvent.ACTION_MOVE:
 				if (isDragging && !isThrowing) {
-					mBall.mPosition.set(event.getX(), Math.max(screenHeight/3, event.getY()));
+					mBall.setPosition(x, y);
 					mBall.mVelocity.set(new AngleVector(0, 0));
 				}
 				
 				break;
 			case MotionEvent.ACTION_UP:
 				if (isDragging) {
-					dx = screenWidth / 2 - event.getX();
+					dx = screenWidth / 2 - x;
 					
-					procentageX = 1 - event.getX() / screenWidth;
-					procentageY = 0.5 - m_lastRoll / 90; 
-					Log.d(LOG_TAG, "Procentage is " +procentageX);
+					percentageX = 1 - x / screenWidth;
+					percentageY = 0.5 - m_lastRoll / 90; 
+					Log.d(LOG_TAG, "Percentage is " +percentageX);
 										
-					mBall.mVelocity.set(new AngleVector(dx * 5,
-							-event.getY() * 4));
+					mBall.mVelocity.set(new AngleVector(dx * 5, -y * 4));
 					isDragging = false;
 					isThrowing = true;
 					
 					if (anymoteCommReady) {
-						anymoteComm.sendString("ba");
+						// percentageX
+						anymoteComm.throwTomato(true, 10, 10);
 					}
 
 					handler.postDelayed(new Runnable() {
@@ -232,9 +251,7 @@ public class FlingActivity extends AngleActivity implements SensorEventListener 
 						@Override
 						public void run() {
 							isThrowing = false;
-							mBall.mPosition.set((float) (procentageX * screenWidth),
-									(float)procentageY * screenHeight);
-							mBall.mVelocity.set(new AngleVector(0, 0));
+							mBall.putBack(screenWidth, screenHeight);
 						}
 					}, 500);
 
@@ -267,14 +284,14 @@ public class FlingActivity extends AngleActivity implements SensorEventListener 
 		mMainLayout.addView(mGLSurfaceView);
 		setContentView(mMainLayout);
 		
-		anymoteComm = new AnymoteCommImpl(this,
-				new AnymoteComm.OnConnectedListener() {
-					@Override
-					public void onConnected() {
-						// anymoteComm.sendString("ba");
-						anymoteCommReady = true;
-					}
-				});
+		if (true) {
+			anymoteComm = new FlingCommImpl(this,
+					new AnymoteComm.OnConnectedListener() {
+						public void onConnected() {
+							anymoteCommReady = true;
+						}
+					});
+		}
 
 		mDemo = new MyDemo(this);
 		setUI(mDemo);
@@ -311,11 +328,11 @@ public class FlingActivity extends AngleActivity implements SensorEventListener 
 
 	@Override
 	public void onConfigurationChanged(Configuration newConfig) {
-		// TODO Auto-generated method stub
 		super.onConfigurationChanged(newConfig);
 		detectScreenSize();
 	}
 
+	@TargetApi(13)
 	private void detectScreenSize() {
 		Display display = getWindowManager().getDefaultDisplay();
 		Point size = new Point();
@@ -415,6 +432,10 @@ public class FlingActivity extends AngleActivity implements SensorEventListener 
 	            Log.d(LOG_TAG,"roll y: " + m_lastRoll);
 	        }
 	    }
-	
-
+	    public void onDestroy() {
+	        super.onDestroy();
+	        if (anymoteCommReady) {
+	        	anymoteComm.release();
+	      }
+	    }
 }
