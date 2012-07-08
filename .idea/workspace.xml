@@ -18,9 +18,7 @@
     <option name="TOOL_WINDOW_LOG_LEVEL" value="ERROR" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cd20683a-61e3-4721-9a85-8387af5b81fe" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tv/src/com/awesome/fling/tv/MainActivity.java" afterPath="$PROJECT_DIR$/tv/src/com/awesome/fling/tv/MainActivity.java" />
-    </list>
+    <list default="true" id="cd20683a-61e3-4721-9a85-8387af5b81fe" name="Default" comment="" />
     <ignored path="fling.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
