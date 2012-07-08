@@ -121,17 +121,19 @@ public class MainActivity extends YouTubeBaseActivity {
   }
 
   @Override
-  protected void onPause() {
-    super.onPause();
-    unregisterReceiver(tomatoThrownHandler);
-    listener.unregisterReceiver();
+  protected void onStart() {
+    super.onStart();
+    registerReceiver(tomatoThrownHandler, TOMATO_THROWN_INTENT_FILTER);
+    listener.registerReceiver();
+    
   }
 
   @Override
-  protected void onResume() {
-    super.onResume();
-    registerReceiver(tomatoThrownHandler, TOMATO_THROWN_INTENT_FILTER);
-    listener.registerReceiver();
+  protected void onStop() {
+    super.onStop();
+    unregisterReceiver(tomatoThrownHandler);
+    listener.unregisterReceiver();
+   
   }
 
   private void initializeViews() {
