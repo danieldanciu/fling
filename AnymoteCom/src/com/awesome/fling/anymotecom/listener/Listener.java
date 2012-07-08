@@ -12,6 +12,12 @@ public class Listener {
 
   private OnAnymoteEvent onAnymoteEvent;
   private Context context;
+
+  public Listener(Context context, OnAnymoteEvent onAnymoteEvent) {
+    this.context = context;
+    this.onAnymoteEvent = onAnymoteEvent;
+  }
+
   private BroadcastReceiver receiver = new BroadcastReceiver() {
     @Override
     public void onReceive(Context context, Intent intent) {
@@ -32,13 +38,13 @@ public class Listener {
       }
     }
   };
-  
+
   public void registerReceiver() {
     IntentFilter filter = new IntentFilter();
     filter.addAction(AnymoteComm.INTENT_SEND_STRING);
     context.registerReceiver(receiver, filter);
   }
-  
+
   public void unregisterReceiver() {
     context.unregisterReceiver(receiver);
   }
