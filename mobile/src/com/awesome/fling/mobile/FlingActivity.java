@@ -90,6 +90,8 @@ public class FlingActivity extends AngleActivity {
 			private float y;
 			private float dx;
 			private float dy;
+			private AngleSpriteLayout mRopeLayoutLeft;
+			private AngleSprite mRopeLeft;
 			
 
 			
@@ -103,11 +105,12 @@ public class FlingActivity extends AngleActivity {
 				mPhysics.mViscosity = 0f; // Air viscosity >Viscosidad del aire
 				addObject(mPhysics);
 
-				mBall = new Ball (mBallLayout);				
+				mBall = new Ball(mBallLayout);				
 				mPhysics.addObject(mBall);
 				
-				AngleRope rope = new AngleRope(0.0f, 0.0f, 2.0f, 5.0f);
-				mPhysics.addObject(rope);
+				mRopeLayoutLeft = new AngleSpriteLayout(mGLSurfaceView, 256, 256, R.drawable.rubberband, 0, 0, 256, 256);
+				mRopeLeft = new AngleSprite(mRopeLayoutLeft);
+				mPhysics.addObject(mRopeLeft);
 			}
 
 
