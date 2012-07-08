@@ -46,59 +46,61 @@ public class MainActivity extends YouTubeBaseActivity {
   StringBuffer message = new StringBuffer();
   boolean isParsing;
 
-  // public boolean onKeyDown(int keyCode, KeyEvent event) {
-  // System.out.println("Received key: " + keyCode);
-  // switch (keyCode) {
-  // KeyEvent.
-  // case KeyEvent.KEYCODE_LEFT_BRACKET:
-  // isParsing = true;
-  // message.setLength(0);
-  // return true;
-  // case KeyEvent.KEYCODE_RIGHT_BRACKET:
-  // isParsing = false;
-  // messageDone(message.toString());
-  // return true;
-  // default:
-  // if (isParsing) {
-  // message.append((char) keyCode);
-  // return true;
-  // }
-  // }
-  // return false;
-  // }
-
-  protected void onNewIntent(Intent intent) {
-    System.out.println("Received intent " + intent);
-    Bundle bundle = intent.getExtras();
-
-    if (bundle != null) {
-      String message = bundle.getString(AnymoteComm.DATA_MESSAGE);
-      System.out.println("Intent message is: " + message);
-      String[] params = message.split(" ");
-      // if ("play".equals(params[0])) {
-      // onAnymoteEvent.onPlayVideo(params[1]);
-      // } else if ("pause".equals(params[0])) {
-      // onAnymoteEvent.onPause();
-      // } else if ("placeTomato".equals(params[0])) {
-      // onAnymoteEvent.onPlaceTomato(Integer.parseInt(params[1]),
-      // Integer.parseInt(params[2]));
-      // } else
-      if ("throwTomato".equals(params[0])) {
-        // onAnymoteEvent.onThrowTomato(Integer.parseInt(params[1]),
-        // Integer.parseInt(params[2]));
-        System.out.println("Sending broadcast for throwing tomato");
-        sendBroadcast(new Intent(ACTION_TOMATO_THROWN));
-      }
+  public boolean onKeyDown(int keyCode, KeyEvent event) {
+    System.out.println("Received key: " + keyCode);
+    switch (keyCode) {
+      case KeyEvent.KEYCODE_LEFT_BRACKET:
+        isParsing = true;
+        message.setLength(0);
+        return true;
+      case KeyEvent.KEYCODE_RIGHT_BRACKET:
+        isParsing = false;
+        messageDone(message.toString());
+        return true;
+      default:
+        
+        if (isParsing) {
+          System.out.println("Char of keycode is " + (char)keyCode);
+          message.append((char) keyCode);
+          return true;
+        }
     }
+    return false;
   }
+
+//  protected void onNewIntent(Intent intent) {
+//    System.out.println("Received intent " + intent);
+//    Bundle bundle = intent.getExtras();
+//
+//    if (bundle != null) {
+//      String message = bundle.getString(AnymoteComm.DATA_MESSAGE);
+//      System.out.println("Intent message is: " + message);
+//      String[] params = message.split(" ");
+//      // if ("play".equals(params[0])) {
+//      // onAnymoteEvent.onPlayVideo(params[1]);
+//      // } else if ("pause".equals(params[0])) {
+//      // onAnymoteEvent.onPause();
+//      // } else if ("placeTomato".equals(params[0])) {
+//      // onAnymoteEvent.onPlaceTomato(Integer.parseInt(params[1]),
+//      // Integer.parseInt(params[2]));
+//      // } else
+//      if ("throwTomato".equals(params[0])) {
+//        // onAnymoteEvent.onThrowTomato(Integer.parseInt(params[1]),
+//        // Integer.parseInt(params[2]));
+//        System.out.println("Sending broadcast for throwing tomato");
+//        sendBroadcast(new Intent(ACTION_TOMATO_THROWN));
+//      }
+//    }
+//  }
 
   private void messageDone(String message) {
     System.out.println("Received message: " + message);
-    String[] params = message.split(" ");
-    if ("throwTomato".equals(params[0])) {
+    //String[] params = message.split(" ");
       // params[1] and params[2] contain the coordinates
-      sendBroadcast(new Intent(ACTION_TOMATO_THROWN));
-    }
+      Intent intent = new Intent(ACTION_TOMATO_THROWN);
+      //intent.putExtra("x", params[0]);
+      //intent.putExtra("y", params[1]);
+      sendBroadcast(intent);
     // else if ("pause".equals(params[0])) {
     // onAnymoteEvent.onPause();
     // } else if ("placeTomato".equals(params[0])) {
@@ -125,7 +127,7 @@ public class MainActivity extends YouTubeBaseActivity {
     super.onStart();
     registerReceiver(tomatoThrownHandler, TOMATO_THROWN_INTENT_FILTER);
     listener.registerReceiver();
-    
+
   }
 
   @Override
@@ -133,7 +135,7 @@ public class MainActivity extends YouTubeBaseActivity {
     super.onStop();
     unregisterReceiver(tomatoThrownHandler);
     listener.unregisterReceiver();
-   
+
   }
 
   private void initializeViews() {

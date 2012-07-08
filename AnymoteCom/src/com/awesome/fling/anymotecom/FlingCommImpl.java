@@ -14,7 +14,7 @@ public class FlingCommImpl implements FlingComm {
 
   @Override
   public void throwTomato(float x, float y) {
-    anymoteComm.sendString("throwTomato " + Integer.toString(((int) (x * 100))) + " "
+    anymoteComm.sendString("" + Integer.toString(((int) (x * 100))) + " "
         + Integer.toString((int) (y * 100)));
   }
 
