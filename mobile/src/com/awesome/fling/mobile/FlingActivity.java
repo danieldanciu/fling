@@ -179,7 +179,7 @@ public class FlingActivity extends AngleActivity implements SensorEventListener 
 			mBallLayout = new AngleSpriteLayout(mGLSurfaceView, 256, 256,
 					R.drawable.tomato, 0, 0, 256, 256);
 
-			mPhysicsEngine = new TomatoPhysicsEngine(3);
+			mPhysicsEngine = new AnglePhysicsEngine(3);
 
 			Display display = getWindowManager().getDefaultDisplay();
 			Point size = new Point();
