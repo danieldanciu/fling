@@ -4,13 +4,11 @@ import android.animation.AnimatorInflater;
 import android.animation.AnimatorSet;
 import android.content.Context;
 import android.content.res.TypedArray;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.graphics.Matrix;
-import android.graphics.Point;
+import android.graphics.*;
 import android.util.AttributeSet;
 import android.view.Display;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.ImageView;
 
 import java.util.Random;
@@ -21,6 +19,12 @@ public class VideoOverlay extends ImageView
     private Splasher splasher;
     private int bitmapWidth;
     private int bitmapHeight;
+    private Bitmap bitmap;
+    private int cornerLocationX;
+    private int cornerLocationY;
+    private Paint paint;
+    private int screenWidth;
+    private int screenHeight;
 
     public VideoOverlay(Context context)
     {
@@ -43,38 +47,62 @@ public class VideoOverlay extends ImageView
     private void init()
     {
         setScaleType(ScaleType.MATRIX);
-        int drawableResource = R.drawable.tomato;
-        setImageResource(drawableResource);
-        BitmapFactory.Options opts = new BitmapFactory.Options();
-        opts.inJustDecodeBounds = true;
-        BitmapFactory.decodeResource(getResources(), drawableResource, opts);
-        bitmapWidth = opts.outWidth;
-        bitmapHeight = opts.outHeight;
+        setImageToDraw(R.drawable.tomato);
 
 
         objectAnimatorSet = (AnimatorSet) AnimatorInflater.loadAnimator(getContext(), R.animator.tomato_splash);
         splasher = new Splasher(this);
         objectAnimatorSet.addListener(splasher);
         objectAnimatorSet.setTarget(this);
+
+        paint = new Paint();
+
+        setScreenSize();
     }
 
-    public void onTomatoThrown(int locationX, int locationY)
+    @Override
+    protected void onDraw(Canvas canvas)
     {
-        locationX -= bitmapWidth/2;
-        locationY -= bitmapHeight/2;
-        Matrix matrix = new Matrix();
-        matrix.setTranslate(locationX, locationY);
-        setImageMatrix(matrix);
+        paint.setAlpha((int) (255 * getAlpha()));
+        canvas.drawBitmap(bitmap, cornerLocationX, cornerLocationY +  getTranslationY(), paint);
+    }
 
-        setPivotX(0);
-        setPivotY(0);
+    public void onTomatoThrown(float x, float y)
+    {
+        int locationX = (int) ((screenWidth - bitmapWidth) * x) + bitmapWidth / 2;
+        int locationY = (int) ((screenHeight - bitmapHeight) * y) + bitmapHeight / 2;
+
+        cornerLocationX = locationX - bitmapWidth;
+        cornerLocationY = locationY - bitmapHeight;
+
+        setPivotX(locationX);
+        setPivotY(locationY);
 
         setVisibility(View.VISIBLE);
         objectAnimatorSet.start();
     }
 
+
+    private void setScreenSize()
+    {
+        WindowManager wm = (WindowManager) getContext().getSystemService(Context.WINDOW_SERVICE);
+        Display display = wm.getDefaultDisplay();
+
+        // we are using api 12 which doesn't have the method getSize so we use the deprecated methods.
+        screenWidth = display.getWidth();
+        screenHeight = display.getHeight();
+    }
+
     public void setSplashListener(SplashListener splashListener)
     {
         splasher.setSplashListener(splashListener);
+    }
+
+    public void setImageToDraw(int resourceId)
+    {
+        BitmapFactory.Options opts = new BitmapFactory.Options();
+        bitmap = BitmapFactory.decodeResource(getResources(), resourceId, opts);
+        bitmapWidth = opts.outWidth;
+        bitmapHeight = opts.outHeight;
     }
 }

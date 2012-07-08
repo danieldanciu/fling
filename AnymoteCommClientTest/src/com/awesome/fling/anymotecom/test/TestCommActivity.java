@@ -17,7 +17,7 @@ public class TestCommActivity extends Activity {
         anymoteComm =
             new FlingCommImpl(this, new AnymoteComm.OnConnectedListener() {
               public void onConnected() {
-                anymoteComm.throwTomato(true, 10, 10);
+                anymoteComm.throwTomato(10, 10);
               }
             });
     }

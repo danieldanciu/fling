@@ -242,8 +242,7 @@ public class FlingActivity extends AngleActivity implements SensorEventListener 
 					isThrowing = true;
 					
 					if (anymoteCommReady) {
-						// percentageX
-						anymoteComm.throwTomato(true, 10, 10);
+						anymoteComm.throwTomato((float)(percentageX), (float)(percentageY));
 					}
 
 					handler.postDelayed(new Runnable() {
