@@ -5,7 +5,9 @@ import android.animation.AnimatorSet;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Matrix;
+import android.graphics.Point;
 import android.util.AttributeSet;
+import android.view.Display;
 import android.view.View;
 import android.widget.ImageView;
 
@@ -36,18 +38,8 @@ public class VideoOverlay extends ImageView
 
     private void init()
     {
-        setImageResource(R.drawable.tomato);
-
         setScaleType(ScaleType.MATRIX);
-        Random random = new Random();
-        float x = random.nextFloat() * 1024.0f;
-        float y = random.nextFloat() * 600.0f;
-        Matrix matrix = new Matrix();
-        matrix.setTranslate(x, y);
-        setImageMatrix(matrix);
-
-        setPivotX(x);
-        setPivotY(y);
+        setImageResource(R.drawable.tomato);
 
         objectAnimatorSet = (AnimatorSet) AnimatorInflater.loadAnimator(getContext(), R.animator.tomato_splash);
         splasher = new Splasher(this);
@@ -55,8 +47,17 @@ public class VideoOverlay extends ImageView
         objectAnimatorSet.setTarget(this);
     }
 
-    public void onTomatoThrown()
+    public void onTomatoThrown(int locationX, int locationY)
     {
+        locationX -= getWidth()/2;
+        locationY -= getHeight()/2;
+        Matrix matrix = new Matrix();
+        matrix.setTranslate(locationX, locationY);
+        setImageMatrix(matrix);
+
+        setPivotX(0);
+        setPivotY(0);
+
         setVisibility(View.VISIBLE);
         objectAnimatorSet.start();
     }

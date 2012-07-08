@@ -2,7 +2,9 @@ package com.awesome.fling.tv;
 
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.graphics.Point;
 import android.os.Bundle;
+import android.view.Display;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
