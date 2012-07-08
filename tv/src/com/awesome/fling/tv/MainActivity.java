@@ -3,11 +3,12 @@ package com.awesome.fling.tv;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-
 import android.widget.FrameLayout;
+
 import com.awesome.fling.anymotecom.listener.Listener;
 import com.google.android.youtube.api.YouTubeBaseActivity;
 import com.google.android.youtube.api.YouTubePlayer;
@@ -31,6 +32,21 @@ public class MainActivity extends YouTubeBaseActivity
         // this will be replaced by incoming message from the device to load video
         youtubePlayer.loadVideo("vbDImUxb2nA");
         listener = new Listener(this, new AnymoteEventListener());
+    }
+    private enum State {
+      SPLASH, AIM, PLAY;
+    }
+    
+    private State currentState;
+    
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+      if (keyCode == KeyEvent.KEYCODE_S) {
+        currentState = State.SPLASH;
+      } else if(keyCode == KeyEvent.KEYCODE_A) {
+        currentState = State.AIM;
+      }
+      return true;
     }
 
     @Override

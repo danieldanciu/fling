@@ -21,6 +21,7 @@ public class Listener {
   private BroadcastReceiver receiver = new BroadcastReceiver() {
     @Override
     public void onReceive(Context context, Intent intent) {
+      System.out.println("Received intent " + intent);
       Bundle bundle = intent.getExtras();
 
       if (bundle != null) {
@@ -40,8 +41,7 @@ public class Listener {
   };
 
   public void registerReceiver() {
-    IntentFilter filter = new IntentFilter();
-    filter.addAction(AnymoteComm.INTENT_SEND_STRING);
+    IntentFilter filter = new IntentFilter(AnymoteComm.INTENT_SEND_STRING);
     context.registerReceiver(receiver, filter);
   }
 

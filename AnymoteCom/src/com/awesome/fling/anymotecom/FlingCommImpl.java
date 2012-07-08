@@ -14,7 +14,7 @@ public class FlingCommImpl implements FlingComm {
 
   @Override
   public void throwTomato(boolean isFresh, int x, int y) {
-    anymoteComm.sendString("sendString " + x + " " + y);
+    anymoteComm.sendXY(x, y);
   }
   
   @Override

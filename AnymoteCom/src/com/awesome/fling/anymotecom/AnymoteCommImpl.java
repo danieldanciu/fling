@@ -26,7 +26,17 @@ public class AnymoteCommImpl implements AnymoteComm {
     Intent intent = new Intent(AnymoteComm.INTENT_SEND_STRING);
     intent.putExtra(AnymoteComm.DATA_MESSAGE, message);
     if (anymoteSender != null) {
-      anymoteSender.sendUrl(intent.toUri(Intent.URI_INTENT_SCHEME));
+      anymoteSender.sendIntent(intent);
+    } else {
+      Intent intent2 = new Intent(context.getApplicationContext(), AnymoteClientService.class);
+      context.bindService(intent2, mConnection, Context.BIND_AUTO_CREATE);
+    }
+  }
+  
+  @Override
+  public void sendXY(int x, int y) {
+    if (anymoteSender != null) {
+      anymoteSender.sendScroll(x, y);
     } else {
       Intent intent2 = new Intent(context.getApplicationContext(), AnymoteClientService.class);
       context.bindService(intent2, mConnection, Context.BIND_AUTO_CREATE);

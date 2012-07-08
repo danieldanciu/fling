@@ -10,4 +10,5 @@ public interface AnymoteComm {
   public void init();
   public void sendString(String message);
   public void release();
+  void sendXY(int x, int y);
 }
