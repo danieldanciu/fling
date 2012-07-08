@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<set xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <translate
+            android:toYDelta="100%"
+            android:duration="@integer/tomato_splash_drop_animation_duration"
+            android:startOffset="500"
+            android:interpolator="@android:interpolator/decelerate_quint"/>
+    <alpha
+            android:fromAlpha="1.0"
+            android:toAlpha="0.0"
+            android:duration="@integer/tomato_splash_drop_animation_duration"
+            android:interpolator="@android:interpolator/linear"/>
+</set>
