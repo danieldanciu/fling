@@ -29,7 +29,8 @@ import com.android.angle.AngleUI;
 import com.android.angle.AngleVector;
 import com.awesome.fling.R;
 import com.awesome.fling.anymotecom.AnymoteComm;
-import com.awesome.fling.anymotecom.AnymoteCommImpl;
+import com.awesome.fling.anymotecom.FlingComm;
+import com.awesome.fling.anymotecom.FlingCommImpl;
 
 public class FlingActivity extends AngleActivity implements SensorEventListener {
 	
@@ -59,7 +60,7 @@ public class FlingActivity extends AngleActivity implements SensorEventListener 
     private float m_tiltCentreY = 0.f;
     private float m_tiltCentreZ = 0.f;
 
-	private AnymoteComm anymoteComm;
+	private FlingComm anymoteComm;
 	private boolean anymoteCommReady;
 
 	private final static String LOG_TAG = FlingActivity.class
@@ -241,7 +242,8 @@ public class FlingActivity extends AngleActivity implements SensorEventListener 
 					isThrowing = true;
 					
 					if (anymoteCommReady) {
-						anymoteComm.sendString("ba");
+						// percentageX
+						anymoteComm.throwTomato(true, 10, 10);
 					}
 
 					handler.postDelayed(new Runnable() {
@@ -282,14 +284,14 @@ public class FlingActivity extends AngleActivity implements SensorEventListener 
 		mMainLayout.addView(mGLSurfaceView);
 		setContentView(mMainLayout);
 		
-		anymoteComm = new AnymoteCommImpl(this,
-				new AnymoteComm.OnConnectedListener() {
-					@Override
-					public void onConnected() {
-						// anymoteComm.sendString("ba");
-						anymoteCommReady = true;
-					}
-				});
+		if (true) {
+			anymoteComm = new FlingCommImpl(this,
+					new AnymoteComm.OnConnectedListener() {
+						public void onConnected() {
+							anymoteCommReady = true;
+						}
+					});
+		}
 
 		mDemo = new MyDemo(this);
 		setUI(mDemo);
@@ -429,5 +431,11 @@ public class FlingActivity extends AngleActivity implements SensorEventListener 
 	            Log.d(LOG_TAG,"pitch x: " + m_lastPitch);
 	            Log.d(LOG_TAG,"roll y: " + m_lastRoll);
 	        }
+	    }
+	    public void onDestroy() {
+	        super.onDestroy();
+	        if (anymoteCommReady) {
+	        	anymoteComm.release();
+	      }
 	    }
 }
