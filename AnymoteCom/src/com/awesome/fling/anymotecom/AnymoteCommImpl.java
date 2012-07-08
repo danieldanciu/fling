@@ -4,29 +4,30 @@ import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.ServiceConnection;
-import android.net.Uri;
 import android.os.IBinder;
 
 import com.example.google.tv.anymotelibrary.client.AnymoteClientService;
 import com.example.google.tv.anymotelibrary.client.AnymoteSender;
 
 public class AnymoteCommImpl implements AnymoteComm {
-  
+
   private final OnConnectedListener onConnectedListener;
+  private final Context context;
 
   public AnymoteCommImpl(Context context, OnConnectedListener onConnectedListener) {
     Intent intent = new Intent(context.getApplicationContext(), AnymoteClientService.class);
     this.onConnectedListener = onConnectedListener;
+    this.context = context;
     context.bindService(intent, mConnection, Context.BIND_AUTO_CREATE);
   }
-  
+
   @Override
   public void sendString(String message) {
-    Intent intent =
-        new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.youtube.com/watch?v=cxLG2wtE7TM"));
+    Intent intent = new Intent(AnymoteComm.INTENT_SEND_STRING);
+    intent.putExtra(AnymoteComm.DATA_MESSAGE, message);
     anymoteSender.sendUrl(intent.toUri(Intent.URI_INTENT_SCHEME));
   }
-  
+
   private AnymoteSender anymoteSender;
 
   public class AnymoteListener implements AnymoteClientService.ClientListener {
@@ -39,7 +40,7 @@ public class AnymoteCommImpl implements AnymoteComm {
         if (onConnectedListener != null) {
           onConnectedListener.onConnected();
         }
-        
+
       } else {
         // Show message to tell the user that the connection failed.
         // Try to connect again if needed.
@@ -83,4 +84,15 @@ public class AnymoteCommImpl implements AnymoteComm {
       mAnymoteClientService = null;
     }
   };
+
+  @Override
+  public void init() {
+    // TODO Auto-generated method stub
+
+  }
+
+  @Override
+  public void release() {
+    context.unbindService(mConnection);
+  }
 }

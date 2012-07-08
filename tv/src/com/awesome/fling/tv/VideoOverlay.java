@@ -54,8 +54,10 @@ public class VideoOverlay extends ImageView
         if (animatorId != -1)
         {
             objectAnimatorSet = (AnimatorSet) AnimatorInflater.loadAnimator(getContext(), animatorId);
+
         }
 
+        objectAnimatorSet.addListener(new Splasher(this));
         objectAnimatorSet.setTarget(this);
     }
 
