@@ -20,10 +20,17 @@ public class Splasher extends AnimatorListenerAdapter implements Animation.Anima
     @Override
     public void onAnimationEnd(Animator animator)
     {
-        videoOverlay.setImageResource(R.drawable.splash);
-        Animation dropAnimation = AnimationUtils.loadAnimation(videoOverlay.getContext(), R.anim.splash_drop);
-        dropAnimation.setAnimationListener(this);
-        videoOverlay.startAnimation(dropAnimation);
+
+        videoOverlay.post(new Runnable()
+        {
+            public void run()
+            {
+                videoOverlay.setImageResource(R.drawable.splash);
+                Animation dropAnimation = AnimationUtils.loadAnimation(videoOverlay.getContext(), R.anim.splash_drop);
+                dropAnimation.setAnimationListener(Splasher.this);
+                videoOverlay.startAnimation(dropAnimation);
+            }
+        });
     }
 
     // Animation listeners (old API)
@@ -34,8 +41,14 @@ public class Splasher extends AnimatorListenerAdapter implements Animation.Anima
 
     public void onAnimationEnd(Animation animation)
     {
-        videoOverlay.setVisibility(View.INVISIBLE);
-        splashListener.onSplashFinished();
+        videoOverlay.post(new Runnable()
+        {
+            public void run()
+            {
+                videoOverlay.setVisibility(View.INVISIBLE);
+                splashListener.onSplashFinished(videoOverlay);
+            }
+        });
     }
 
     public void onAnimationRepeat(Animation animation)

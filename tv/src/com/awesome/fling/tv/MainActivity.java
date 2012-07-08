@@ -7,6 +7,7 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 
+import android.widget.FrameLayout;
 import com.awesome.fling.anymotecom.listener.Listener;
 import com.google.android.youtube.api.YouTubeBaseActivity;
 import com.google.android.youtube.api.YouTubePlayer;
@@ -18,7 +19,6 @@ public class MainActivity extends YouTubeBaseActivity
     private static final IntentFilter TOMATO_THROWN_INTENT_FILTER = new IntentFilter(ACTION_TOMATO_THROWN);
 
     private YouTubePlayer youtubePlayer;
-    private VideoOverlay overlay;
     private TomatoThrownHandler tomatoThrownHandler;
     private Listener listener;
 
@@ -79,7 +79,7 @@ public class MainActivity extends YouTubeBaseActivity
         youtubePlayerView.setUseSurfaceTexture(true);
         youtubePlayer = youtubePlayerView;
 
-        overlay = (VideoOverlay) findViewById(R.id.overlay);
-        tomatoThrownHandler = new TomatoThrownHandler(overlay, youtubePlayer);
+        FrameLayout tomatoContainer = (FrameLayout) findViewById(R.id.tomato_container);
+        tomatoThrownHandler = new TomatoThrownHandler(tomatoContainer, youtubePlayer);
     }
 }

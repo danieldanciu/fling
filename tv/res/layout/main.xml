@@ -3,6 +3,7 @@
 <FrameLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:awesome_fling="http://schemas.android.com/apk/res/com.awesome.fling.tv"
+              android:id="@+id/tomato_container"
               android:layout_width="fill_parent"
               android:layout_height="fill_parent">
 
@@ -10,15 +11,5 @@
             android:id="@+id/youtube_player_view"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"/>
-
-    <com.awesome.fling.tv.VideoOverlay
-            android:id="@+id/overlay"
-            android:src="@drawable/tomato"
-            awesome_fling:object_animator="@animator/tomato_splash"
-            android:adjustViewBounds="true"
-            android:scaleType="center"
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:visibility="invisible"/>
 
 </FrameLayout>
