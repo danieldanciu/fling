@@ -130,11 +130,8 @@ public class FlingActivity extends AngleActivity implements SensorEventListener 
 		private AngleRotatingSprite ropeLeft;
 		private AngleRotatingSprite ropeRight;
 
-		private float screenWidth;
-
 		public Sling(int screenWidth) {
 			super(0, 0);
-			this.screenWidth = (float) screenWidth;
 			
 			ropeLeft = new AngleRotatingSprite(0, 0, new AngleSpriteLayout(mGLSurfaceView, 32, 4096, R.drawable.rope, 0, 0, 8, 512));
 			ropeRight = new AngleRotatingSprite(0, 0, new AngleSpriteLayout(mGLSurfaceView, 32, 4096, R.drawable.rope, 0, 0, 8, 512));
@@ -146,7 +143,6 @@ public class FlingActivity extends AngleActivity implements SensorEventListener 
 		}
 
 		public void updateObjectPosition(float x, float y) {
-			y = y + 40;
 			ropeLeft.mPosition.mX = x;
 			ropeLeft.mPosition.mY = y;
 			ropeLeft.mRotation = FloatMath.sin(x/y) * (180.0f / (float) Math.PI);
@@ -205,6 +201,7 @@ public class FlingActivity extends AngleActivity implements SensorEventListener 
 
 			float y = event.getY();
 			float x = event.getX();
+			y = y - 100;
 
 			switch (event.getAction()) {
 			case MotionEvent.ACTION_DOWN:
@@ -249,7 +246,7 @@ public class FlingActivity extends AngleActivity implements SensorEventListener 
 							isThrowing = false;
 							mBall.putBack(screenWidth, screenHeight);
 						}
-					}, 500);
+					}, 2000);
 
 				}
 				break;
