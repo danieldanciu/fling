@@ -69,6 +69,8 @@ public class MainActivity extends YouTubeBaseActivity
         YouTubePlayerView youtubePlayerView = (YouTubePlayerView) findViewById(R.id.youtube_player_view);
 
         registerPlayerView(youtubePlayerView);
+        youtubePlayerView.setShowControls(false);
+        youtubePlayerView.setUseSurfaceTexture(true);
         youtubePlayer = youtubePlayerView;
 
         overlay = (VideoOverlay) findViewById(R.id.overlay);
