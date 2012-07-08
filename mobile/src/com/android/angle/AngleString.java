@@ -180,7 +180,7 @@ public class AngleString extends AngleObject
 						}
 						if (lineWidth <= mDisplayWidth)
 							break;
-						while ((mStep1.charAt(llc) != ' ') && (llc > flc)) // Quita la última palabra
+						while ((mStep1.charAt(llc) != ' ') && (llc > flc)) // Quita la ltima palabra
 						{
 							lineWidth -= mFont.charWidth(mStep1.charAt(llc));
 							llc--;

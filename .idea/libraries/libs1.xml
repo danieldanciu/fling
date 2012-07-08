@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="libs1">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/AnymoteLibrary/libs/bcprov-jdk15-143.jar!/" />
+      <root url="jar://$PROJECT_DIR$/AnymoteLibrary/libs/protobuf-java-2.2.0-lite.jar!/" />
+      <root url="jar://$PROJECT_DIR$/AnymoteLibrary/libs/anymote.jar!/" />
+      <root url="jar://$PROJECT_DIR$/AnymoteLibrary/libs/polo.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

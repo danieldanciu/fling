@@ -101,7 +101,7 @@ public class FlingActivity extends AngleActivity {
 
 			mMass = 10;
 			mBounce = 0.6f; // Coefficient of restitution (1 return all the
-							// energy) >Coeficiente de restitución (1 devuelve
+							// energy) >Coeficiente de restitucin (1 devuelve
 							// toda la energia)
 		}
 
