@@ -21,12 +21,28 @@ public class AnymoteCommImpl implements AnymoteComm {
     context.bindService(intent, mConnection, Context.BIND_AUTO_CREATE);
   }
 
+//  @Override
+//  public void sendString(String message) {
+//    System.out.println("Sending anymote command: " + message);
+//    if (anymoteSender != null) {
+//      anymoteSender.sendKeyPress('[');
+//      for (int i=0; i< message.length(); ++i) {
+//        anymoteSender.sendKeyPress(message.charAt(i));
+//      }
+//      anymoteSender.sendKeyPress(']');
+//    } else {
+//      Intent intent2 = new Intent(context.getApplicationContext(), AnymoteClientService.class);
+//      context.bindService(intent2, mConnection, Context.BIND_AUTO_CREATE);
+//    }
+//  }
+  
   @Override
   public void sendString(String message) {
-    Intent intent = new Intent(AnymoteComm.INTENT_SEND_STRING);
-    intent.putExtra(AnymoteComm.DATA_MESSAGE, message);
+    System.out.println("Sending anymote command: " + message);
     if (anymoteSender != null) {
-      anymoteSender.sendIntent(intent);
+      Intent intent = new Intent(AnymoteComm.INTENT_SEND_STRING);
+      intent.putExtra(AnymoteComm.DATA_MESSAGE, message);
+      anymoteSender.sendUrl(intent.toUri(Intent.URI_INTENT_SCHEME));
     } else {
       Intent intent2 = new Intent(context.getApplicationContext(), AnymoteClientService.class);
       context.bindService(intent2, mConnection, Context.BIND_AUTO_CREATE);
