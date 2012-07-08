@@ -252,7 +252,7 @@ public class FlingActivity extends AngleActivity implements SensorEventListener 
 							isThrowing = false;
 							mBall.putBack(screenWidth, screenHeight);
 						}
-					}, 500);
+					}, 2000);
 
 				}
 				break;
