@@ -203,6 +203,7 @@ public class FlingActivity extends AngleActivity implements SensorEventListener 
 
 			float y = event.getY();
 			float x = event.getX();
+			y = y - 100;
 
 			switch (event.getAction()) {
 			case MotionEvent.ACTION_DOWN:
