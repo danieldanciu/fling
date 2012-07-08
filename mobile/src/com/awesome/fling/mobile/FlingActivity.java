@@ -17,6 +17,7 @@ import android.util.FloatMath;
 import android.util.Log;
 import android.view.Display;
 import android.view.MotionEvent;
+import android.view.Window;
 import android.widget.FrameLayout;
 
 import com.android.angle.AngleActivity;
@@ -71,9 +72,11 @@ public class FlingActivity extends AngleActivity implements SensorEventListener 
 	private int screenHeight;
 
 	private final SensorEventListener mListener = new SensorEventListener() {
+		@Override
 		public void onAccuracyChanged(Sensor sensor, int accuracy) {
 		}
 
+		@Override
 		public void onSensorChanged(SensorEvent event) {
 			if (event.sensor.getType() == Sensor.TYPE_ACCELEROMETER) {
 				mDemo.setGravity(-event.values[0], event.values[1]);
@@ -242,11 +245,12 @@ public class FlingActivity extends AngleActivity implements SensorEventListener 
 
 					handler.postDelayed(new Runnable() {
 
+						@Override
 						public void run() {
 							isThrowing = false;
 							mBall.putBack(screenWidth, screenHeight);
 						}
-					}, 2000);
+					}, 1000);
 
 				}
 				break;
@@ -268,7 +272,7 @@ public class FlingActivity extends AngleActivity implements SensorEventListener 
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		anymoteCommReady = false;
-
+		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
 		mSensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
 
 		// mGLSurfaceView.addObject(new FPSCounter());
@@ -343,9 +347,11 @@ public class FlingActivity extends AngleActivity implements SensorEventListener 
         m_sensorManager.unregisterListener(this);
     }
 	
+	 @Override
 	    public void onAccuracyChanged(Sensor sensor, int accuracy) {
 	    }
 	 
+	    @Override
 	    public void onSensorChanged(SensorEvent event) {
 	        if (event.sensor.getType() == Sensor.TYPE_ACCELEROMETER) {
 	            accel(event);
@@ -418,9 +424,9 @@ public class FlingActivity extends AngleActivity implements SensorEventListener 
 	            m_lastPitch = m_filters[1].append(pitch);
 	            m_lastRoll = m_filters[2].append(roll);
 	           
-//	            Log.d(LOG_TAG, "azi z: " + m_lastYaw);
-//	            Log.d(LOG_TAG,"pitch x: " + m_lastPitch);
-//	            Log.d(LOG_TAG,"roll y: " + m_lastRoll);
+	            Log.d(LOG_TAG, "azi z: " + m_lastYaw);
+	            Log.d(LOG_TAG,"pitch x: " + m_lastPitch);
+	            Log.d(LOG_TAG,"roll y: " + m_lastRoll);
 	        }
 	    }
 	    public void onDestroy() {
