@@ -9,9 +9,11 @@ import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
+import android.opengl.GLSurfaceView;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.HandlerThread;
+import android.util.FloatMath;
 import android.util.Log;
 import android.view.Display;
 import android.view.MotionEvent;
@@ -19,6 +21,8 @@ import android.widget.FrameLayout;
 
 import com.android.angle.AngleActivity;
 import com.android.angle.AnglePhysicObject;
+import com.android.angle.AnglePhysicsEngine;
+import com.android.angle.AngleRotatingSprite;
 import com.android.angle.AngleSprite;
 import com.android.angle.AngleSpriteLayout;
 import com.android.angle.AngleUI;
@@ -76,47 +80,34 @@ public class FlingActivity extends AngleActivity {
 	};
 
 	private class Sling extends AnglePhysicObject {
-		private AngleSprite leftSprite;
-		private AngleSprite rightSprite;
-		private AngleSpriteLayout leftLayout;
-		private AngleSpriteLayout rightLayout;
+		private AngleRotatingSprite ropeLeft;
+		private AngleRotatingSprite ropeRight;
+
 		private int screenWidth;
+
 
 		public Sling(int screenWidth) {
 			super(0, 0);
 			this.screenWidth = screenWidth;
-			leftLayout = new AngleSpriteLayout(mGLSurfaceView, 256, 256, R.drawable.rubberband);
-			rightLayout = new AngleSpriteLayout(mGLSurfaceView, 512, 256, R.drawable.rubberband);
-			leftSprite = new AngleSprite(leftLayout);
-			rightSprite = new AngleSprite(rightLayout);
-		}
-
-		@Override
-		public float getSurface() {
-			return 29 * 2; // Radius * 2 >Radio * 2
-		}
-
-		@Override
-		public void draw(GL10 gl) {
-			leftSprite.draw(gl);
-			rightSprite.draw(gl);
-		}
-
-		public void addToDemo(MyDemo myDemo) {
-			myDemo.addObject(leftSprite);
-			myDemo.addObject(rightSprite);
-		}
-		
-		public void updateObjectPosition(int x, int y) {
-			leftLayout.changeLayout(x, y, R.drawable.rubberband);
-			leftSprite.setLayout(leftLayout);
-			leftSprite.mPosition.mX = 0;
-			leftSprite.mPosition.mY = 0;
 			
-			rightLayout.changeLayout(screenWidth - x, y, R.drawable.rubberband);
-			rightSprite.setLayout(rightLayout);
-			rightSprite.mPosition.mX = x;
-			rightSprite.mPosition.mY = 0;
+			ropeLeft = new AngleRotatingSprite(0, 0, new AngleSpriteLayout(mGLSurfaceView, 32, 4096, R.drawable.rope, 0, 0, 8, 512));
+			ropeRight = new AngleRotatingSprite(0, 0, new AngleSpriteLayout(mGLSurfaceView, 32, 4096, R.drawable.rope, 0, 0, 8, 512));
+		}
+
+		public void addToDemo(AnglePhysicsEngine mPhysicsEngine) {
+			mPhysicsEngine.addObject(ropeLeft);
+			mPhysicsEngine.addObject(ropeRight);
+		}
+
+		public void updateObjectPosition(int x, int y) {
+			y = y + 40;
+			ropeLeft.mPosition.mX = x;
+			ropeLeft.mPosition.mY = y;
+			ropeLeft.mRotation = FloatMath.sin((float)x/(float)y) * (180.0f / (float) Math.PI);
+			
+			ropeRight.mPosition.mX = x;
+			ropeRight.mPosition.mY = y;
+			ropeRight.mRotation = -FloatMath.sin((float)(screenWidth-x)/(float)y) * (180.0f / (float) Math.PI);
 		}
 	};
 
@@ -129,6 +120,7 @@ public class FlingActivity extends AngleActivity {
 		private int screenHeight;
 		private boolean isDragging;
 		private boolean isThrowing;
+		private AnglePhysicsEngine mPhysicsEngine;
 
 		@TargetApi(13)
 		public MyDemo(AngleActivity activity) {
@@ -137,8 +129,8 @@ public class FlingActivity extends AngleActivity {
 			mBallLayout = new AngleSpriteLayout(mGLSurfaceView, 256, 256,
 					R.drawable.tomato, 0, 0, 256, 256);
 
+			mPhysicsEngine = new TomatoPhysicsEngine(3);
 			mBall = new Tomato(mBallLayout);
-			addObject(mBall);
 
 			Display display = getWindowManager().getDefaultDisplay();
 			Point size = new Point();
@@ -149,11 +141,14 @@ public class FlingActivity extends AngleActivity {
 			mBall.mPosition.set(screenWidth / 2, screenHeight / 3);
 			
 			sling = new Sling(screenWidth);
-			sling.addToDemo(this);
 			
 			Log.d(FlingActivity.class.getCanonicalName(), "Ball is at "
 					+ mBall.mPosition.mX + " " + mBall.mPosition.mY);
 			isDragging = false;
+			
+			mPhysicsEngine.addObject(mBall);
+			sling.addToDemo(mPhysicsEngine);
+			addObject(mPhysicsEngine);
 		}
 
 		@Override
