@@ -42,13 +42,14 @@ public class AnymoteCommImpl implements AnymoteComm {
   
   @Override
   public void sendString(String message) {
-    System.out.println("Sending anymote command: " + message);
-    if (anymoteSender != null) {
-      anymoteSender.sendKeyPress(KeyEvent.KEYCODE_LEFT_BRACKET);
-      for (int i=0; i< message.length(); ++i) {
-        anymoteSender.sendKeyPress(map.get(message.charAt(i)));
-      }
-      anymoteSender.sendKeyPress(KeyEvent.KEYCODE_RIGHT_BRACKET);
+
+//    System.out.println("Sending anymote command: " + message);
+      if (anymoteSender != null) {
+        anymoteSender.sendKeyPress(KeyEvent.KEYCODE_LEFT_BRACKET);
+//      for (int i=0; i< message.length(); ++i) {
+//        anymoteSender.sendKeyPress(map.get(message.charAt(i)));
+//      }
+//      anymoteSender.sendKeyPress(KeyEvent.KEYCODE_RIGHT_BRACKET);
     } else {
       Intent intent2 = new Intent(context.getApplicationContext(), AnymoteClientService.class);
       context.bindService(intent2, mConnection, Context.BIND_AUTO_CREATE);

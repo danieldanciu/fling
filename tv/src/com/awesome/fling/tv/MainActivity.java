@@ -15,6 +15,8 @@ import com.google.android.youtube.api.YouTubeBaseActivity;
 import com.google.android.youtube.api.YouTubePlayer;
 import com.google.android.youtube.api.YouTubePlayerView;
 
+import java.util.Arrays;
+
 public class MainActivity extends YouTubeBaseActivity {
   public static final String ACTION_TOMATO_THROWN = "com.awesome.fling.ACTION_TOMATO_THROWN";
   private static final IntentFilter TOMATO_THROWN_INTENT_FILTER = new IntentFilter(
@@ -29,8 +31,11 @@ public class MainActivity extends YouTubeBaseActivity {
     super.onCreate(savedInstanceState);
     initializeViews();
 
-    // this will be replaced by incoming message from the device to load video
-    youtubePlayer.loadVideo("vbDImUxb2nA");
+    youtubePlayer.loadVideos(Arrays.asList(
+            "kfVsfOSbJY0",
+            "dQw4w9WgXcQ",
+            "QH2-TGUlwu4",
+            "4GuqB1BQVr4"));
     listener = new Listener(this, new AnymoteEventListener());
   }
 
@@ -50,22 +55,22 @@ public class MainActivity extends YouTubeBaseActivity {
     System.out.println("Received key: " + keyCode);
     switch (keyCode) {
       case KeyEvent.KEYCODE_LEFT_BRACKET:
-        isParsing = true;
-        message.setLength(0);
+        sendBroadcast(new Intent(ACTION_TOMATO_THROWN));
+//        isParsing = true;
+//        message.setLength(0);
         return true;
-      case KeyEvent.KEYCODE_RIGHT_BRACKET:
-        isParsing = false;
-        messageDone(message.toString());
-        return true;
+//      case KeyEvent.KEYCODE_RIGHT_BRACKET:
+//        isParsing = false;
+//        messageDone(message.toString());
+//        return true;
       default:
-        
-        if (isParsing) {
-          System.out.println("Char of keycode is " + (char)keyCode);
-          message.append((char) keyCode);
-          return true;
-        }
+//      {
+//        if (isParsing) {
+//          System.out.println("Char of keycode is " + (char)keyCode);
+//          message.append((char) keyCode);
+          return super.onKeyDown(keyCode, event);
+//        }
     }
-    return false;
   }
 
 //  protected void onNewIntent(Intent intent) {

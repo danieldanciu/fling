@@ -12,6 +12,7 @@ import android.widget.FrameLayout;
 import com.google.android.youtube.api.YouTubePlayer;
 
 import java.util.Random;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class TomatoThrownHandler extends BroadcastReceiver implements SplashListener
 {
@@ -21,6 +22,10 @@ public class TomatoThrownHandler extends BroadcastReceiver implements SplashList
     private FrameLayout tomatoContainer;
 
     Random random = new Random();
+    private boolean isPausing;
+    private final AtomicInteger count = new AtomicInteger();
+    private int totalTomatosForVideo;
+    private boolean doneWithVideo;
 
     public TomatoThrownHandler(FrameLayout tomatoContainer, YouTubePlayer youtubePlayer)
     {
@@ -31,6 +36,9 @@ public class TomatoThrownHandler extends BroadcastReceiver implements SplashList
     @Override
     public void onReceive(Context context, Intent intent)
     {
+        totalTomatosForVideo++;
+        count.incrementAndGet();
+        isPausing = true;
         youtubePlayer.pause();
         VideoOverlay tomatoOverlay = new VideoOverlay(context);
         FrameLayout.LayoutParams layoutParams =
@@ -42,10 +50,32 @@ public class TomatoThrownHandler extends BroadcastReceiver implements SplashList
         float y = random.nextFloat();
 
         tomatoOverlay.onTomatoThrown(x, y);
+        if (totalTomatosForVideo > 7)
+        {
+            doneWithVideo = true;
+        }
     }
 
     public void onSplashFinished(View viewDisplayingTheSplash)
     {
         tomatoContainer.removeView(viewDisplayingTheSplash);
+        isPausing = false;
+        int currentCount = count.decrementAndGet();
+        if (currentCount == 0)
+        {
+            totalTomatosForVideo = 0;
+            if (doneWithVideo)
+            {
+                doneWithVideo = false;
+                if (youtubePlayer.hasNext())
+                {
+                    youtubePlayer.next();
+                }
+            }
+            else
+            {
+                youtubePlayer.play();
+            }
+        }
     }
 }

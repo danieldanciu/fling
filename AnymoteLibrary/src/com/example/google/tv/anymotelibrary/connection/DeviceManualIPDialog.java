@@ -43,7 +43,7 @@ public class DeviceManualIPDialog extends AlertDialog {
     private static final char[] ACCEPTED_CHARS = "0123456789.:".toCharArray();
     private final Context context;
     private ManualIPListener listener;
-    private String lastSavedIp = "192.168.145.163";
+    private String lastSavedIp = "192.168.146.211";
 
     /**
      * The listener for Manual IP Dialog.
